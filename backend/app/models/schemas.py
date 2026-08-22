@@ -46,6 +46,14 @@ class CustomerProfile(BaseModel):
     historical_payment_success_rate: float = 0.85
 
 
+class MerchantPolicyConfig(BaseModel):
+    max_retries: int = Field(3, ge=1, le=5)
+    max_discount_percentage: float = Field(10.0, ge=0.0, le=15.0)
+    enforce_quiet_hours: bool = True
+    anti_spam_cooldown_hours: int = Field(4, ge=1, le=24)
+    b2b_voice_threshold_inr: float = Field(50000.0, ge=5000.0)
+
+
 class FailureEvent(BaseModel):
     event_id: str
     order_id: str
@@ -90,7 +98,7 @@ class InterventionPlan(BaseModel):
     channel: str  # 'RAZORPAY_GATEWAY', 'WHATSAPP', 'EMAIL', 'VOICE_BOT', 'MERCHANT_DASHBOARD'
     delay_minutes: int = 0
     message_payload: Optional[str] = None
-    discount_percentage: float = Field(0.0, ge=0.0, le=10.0, description="Strictly capped at 10%")
+    discount_percentage: float = Field(0.0, ge=0.0, le=15.0)
     expected_success_probability: float = Field(..., ge=0.0, le=1.0)
     cost_of_intervention_inr: float = Field(..., ge=0.0)
     explanation: str
@@ -135,4 +143,5 @@ class BatchBenchmarkSummary(BaseModel):
     roi_multiple: float
     guardrail_adherence_pct: float
     breakdown_by_category: Dict[str, Dict[str, Any]]
+    channel_breakdown: Dict[str, Dict[str, Any]] = Field(default_factory=dict)
     generated_at: datetime = Field(default_factory=utc_now)

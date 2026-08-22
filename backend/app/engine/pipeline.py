@@ -1,6 +1,6 @@
 """End-to-End Revenue Recovery Pipeline Orchestrator for Razorpay Revive."""
 from typing import Dict, Any, Optional
-from app.models.schemas import FailureEvent, ExecutionResult
+from app.models.schemas import FailureEvent, ExecutionResult, MerchantPolicyConfig
 from app.engine.classifier import FailureClassifier
 from app.engine.planner import InterventionPlanner
 from app.engine.guardrails import FintechGuardrailEngine
@@ -29,17 +29,20 @@ class RevenueRecoveryPipeline:
         self.audit_store = audit_store or AuditStore()
 
     def process_event(
-        self, event: FailureEvent, deterministic_outcome: Optional[bool] = None
+        self,
+        event: FailureEvent,
+        deterministic_outcome: Optional[bool] = None,
+        policy: Optional[MerchantPolicyConfig] = None,
     ) -> Dict[str, Any]:
         """Runs complete autonomous recovery loop for a single failure event."""
         # 1. Failure Taxonomy Classification
         diagnosis = self.classifier.diagnose(event)
 
         # 2. Dynamic Intervention Formulation
-        plan = self.planner.create_plan(event, diagnosis)
+        plan = self.planner.create_plan(event, diagnosis, policy=policy)
 
         # 3. Deterministic Compliance Guardrails
-        verdict = self.guardrails.verify_plan(event, plan)
+        verdict = self.guardrails.verify_plan(event, plan, policy=policy)
 
         # 4. Bounded Action Execution
         execution = self.executor.execute(

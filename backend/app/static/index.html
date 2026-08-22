@@ -8,58 +8,48 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
     <script>
         tailwind.config = {
             darkMode: 'class',
             theme: {
                 extend: {
                     colors: {
-                        brand: {
-                            50: '#eef6ff',
-                            500: '#0066f5',
-                            600: '#0052cc',
-                            700: '#0c2340',
-                            800: '#07162c',
-                            900: '#030b18',
-                        },
-                        rzp: {
-                            blue: '#0284c7',
-                            accent: '#10b981',
-                            dark: '#0b132b',
-                            card: '#111d4a',
-                        }
+                        brand: { 50: '#eef6ff', 500: '#0066f5', 600: '#0052cc', 700: '#0c2340', 800: '#07162c', 900: '#030b18' },
+                        rzp: { blue: '#0284c7', accent: '#10b981', dark: '#0b132b', card: '#111d4a' }
                     }
                 }
             }
         }
     </script>
     <style>
-        body {
-            background-color: #080e1e;
-            color: #f1f5f9;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-        }
-        .glow-border {
-            box-shadow: 0 0 15px rgba(0, 102, 245, 0.15);
-        }
-        .custom-scrollbar::-webkit-scrollbar {
-            width: 6px;
-            height: 6px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-track {
-            background: #0d172e;
-        }
-        .custom-scrollbar::-webkit-scrollbar-thumb {
-            background: #1e293b;
-            border-radius: 3px;
-        }
+        body { background-color: #080e1e; color: #f1f5f9; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        .glow-border { box-shadow: 0 0 15px rgba(0, 102, 245, 0.15); }
+        .glow-green { box-shadow: 0 0 12px rgba(16, 185, 129, 0.2); }
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; height: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: #0d172e; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 3px; }
+        .phone-frame { width: 280px; min-height: 420px; border-radius: 28px; border: 3px solid #334155; background: #0f172a; position: relative; overflow: hidden; }
+        .phone-notch { width: 100px; height: 20px; background: #1e293b; border-radius: 0 0 12px 12px; margin: 0 auto; }
+        .chat-bubble-green { background: #054d2e; border-radius: 0 12px 12px 12px; }
+        .chat-bubble-white { background: #1e293b; border-radius: 12px 0 12px 12px; }
+        .typing-dot { animation: blink 1.4s infinite both; }
+        .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+        .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+        @keyframes blink { 0%, 80%, 100% { opacity: 0.3; } 40% { opacity: 1; } }
+        @keyframes pulse-ring { 0% { transform: scale(0.8); opacity: 1; } 100% { transform: scale(1.6); opacity: 0; } }
+        .voice-ring { animation: pulse-ring 1.2s ease-out infinite; }
+        .telemetry-bar { transition: width 0.8s ease-in-out; }
+        input[type="range"] { -webkit-appearance: none; appearance: none; height: 6px; border-radius: 3px; background: #1e293b; outline: none; }
+        input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: 16px; height: 16px; border-radius: 50%; background: #3b82f6; cursor: pointer; }
     </style>
 </head>
 <body class="min-h-screen custom-scrollbar">
 
     <!-- Top Navigation -->
     <header class="border-b border-slate-800 bg-[#0a1224]/80 backdrop-blur sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+        <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
             <div class="flex items-center space-x-3">
                 <div class="w-9 h-9 rounded-lg bg-blue-600 flex items-center justify-center font-bold text-white shadow-lg shadow-blue-500/30">
                     <i data-lucide="zap" class="w-5 h-5"></i>
@@ -72,240 +62,247 @@
                     <p class="text-xs text-slate-400">Autonomous AI Revenue Recovery & Smart Dunning Engine</p>
                 </div>
             </div>
-
             <div class="flex items-center space-x-4">
                 <div class="flex items-center space-x-2 text-xs bg-emerald-500/10 border border-emerald-500/20 px-3 py-1.5 rounded-full text-emerald-400">
                     <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
                     <span class="font-medium">Sandbox Mode: Active</span>
                 </div>
-                <button onclick="resetLogs()" class="text-xs text-slate-400 hover:text-white px-3 py-1.5 rounded-lg border border-slate-700 hover:bg-slate-800 transition">
-                    Clear Logs
-                </button>
+                <button onclick="resetLogs()" class="text-xs text-slate-400 hover:text-white px-3 py-1.5 rounded-lg border border-slate-700 hover:bg-slate-800 transition">Clear Logs</button>
             </div>
         </div>
     </header>
 
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-6">
+    <main class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-6">
 
         <!-- Top Metrics Cards -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4" id="metrics-grid">
             <div class="bg-[#0f1b35] border border-slate-800 rounded-xl p-4 glow-border">
-                <div class="flex items-center justify-between text-slate-400 text-xs font-medium">
-                    <span>Value at Risk</span>
-                    <i data-lucide="alert-triangle" class="w-4 h-4 text-amber-400"></i>
-                </div>
+                <div class="flex items-center justify-between text-slate-400 text-xs font-medium"><span>Value at Risk</span><i data-lucide="alert-triangle" class="w-4 h-4 text-amber-400"></i></div>
                 <div class="text-2xl font-bold text-white mt-2" id="kpi-at-risk">₹0</div>
                 <div class="text-xs text-slate-400 mt-1">Across all failed events</div>
             </div>
-
             <div class="bg-[#0f1b35] border border-slate-800 rounded-xl p-4 glow-border">
-                <div class="flex items-center justify-between text-slate-400 text-xs font-medium">
-                    <span>Value Recovered</span>
-                    <i data-lucide="trending-up" class="w-4 h-4 text-emerald-400"></i>
-                </div>
+                <div class="flex items-center justify-between text-slate-400 text-xs font-medium"><span>Value Recovered</span><i data-lucide="trending-up" class="w-4 h-4 text-emerald-400"></i></div>
                 <div class="text-2xl font-bold text-emerald-400 mt-2" id="kpi-recovered">₹0</div>
                 <div class="text-xs text-slate-400 mt-1" id="kpi-recovered-count">0 transactions saved</div>
             </div>
-
             <div class="bg-[#0f1b35] border border-slate-800 rounded-xl p-4 glow-border">
-                <div class="flex items-center justify-between text-slate-400 text-xs font-medium">
-                    <span>Recovery Rate</span>
-                    <i data-lucide="percent" class="w-4 h-4 text-blue-400"></i>
-                </div>
+                <div class="flex items-center justify-between text-slate-400 text-xs font-medium"><span>Recovery Rate</span><i data-lucide="percent" class="w-4 h-4 text-blue-400"></i></div>
                 <div class="text-2xl font-bold text-blue-400 mt-2" id="kpi-rate">0.0%</div>
-                <div class="text-xs text-slate-400 mt-1">Target benchmark: >65%</div>
+                <div class="text-xs text-slate-400 mt-1">Target benchmark: &gt;65%</div>
             </div>
-
             <div class="bg-[#0f1b35] border border-slate-800 rounded-xl p-4 glow-border">
-                <div class="flex items-center justify-between text-slate-400 text-xs font-medium">
-                    <span>Net Economic Value</span>
-                    <i data-lucide="wallet" class="w-4 h-4 text-purple-400"></i>
-                </div>
+                <div class="flex items-center justify-between text-slate-400 text-xs font-medium"><span>Net Economic Value</span><i data-lucide="wallet" class="w-4 h-4 text-purple-400"></i></div>
                 <div class="text-2xl font-bold text-purple-400 mt-2" id="kpi-net-value">₹0</div>
                 <div class="text-xs text-slate-400 mt-1">Net of SMS/Voice cost</div>
             </div>
-
             <div class="bg-[#0f1b35] border border-slate-800 rounded-xl p-4 glow-border">
-                <div class="flex items-center justify-between text-slate-400 text-xs font-medium">
-                    <span>Guardrail Adherence</span>
-                    <i data-lucide="shield-check" class="w-4 h-4 text-teal-400"></i>
-                </div>
+                <div class="flex items-center justify-between text-slate-400 text-xs font-medium"><span>Guardrail Adherence</span><i data-lucide="shield-check" class="w-4 h-4 text-teal-400"></i></div>
                 <div class="text-2xl font-bold text-teal-400 mt-2" id="kpi-guardrail">100%</div>
                 <div class="text-xs text-slate-400 mt-1">5 strict safety policies</div>
             </div>
         </div>
 
-        <!-- Main Grid -->
+        <!-- === ROW 2: Bank Telemetry Heatmap === -->
+        <div class="bg-[#0f1b35] border border-slate-800 rounded-xl p-5 glow-border">
+            <div class="flex items-center justify-between pb-3 border-b border-slate-800">
+                <div class="flex items-center space-x-2">
+                    <i data-lucide="radio-tower" class="w-5 h-5 text-cyan-400"></i>
+                    <h2 class="font-semibold text-white">Live Bank Switch Telemetry — Razorpay Optimizer</h2>
+                </div>
+                <button onclick="fetchTelemetry()" class="text-xs text-cyan-400 hover:underline flex items-center space-x-1"><i data-lucide="refresh-cw" class="w-3 h-3"></i><span>Refresh</span></button>
+            </div>
+            <div class="mt-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3" id="telemetry-grid">
+                <div class="text-center py-4 text-slate-500 text-xs col-span-full">Loading bank telemetry...</div>
+            </div>
+        </div>
+
+        <!-- === ROW 3: Main 3-column Grid === -->
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
 
-            <!-- Left 6 Columns: Interactive Sandbox & Live DAG Trace -->
-            <div class="lg:col-span-6 space-y-6">
+            <!-- LEFT: Simulator + Phone Preview + DAG Trace -->
+            <div class="lg:col-span-4 space-y-6">
 
                 <!-- Sandbox Form -->
                 <div class="bg-[#0f1b35] border border-slate-800 rounded-xl p-5 glow-border">
                     <div class="flex items-center justify-between pb-3 border-b border-slate-800">
-                        <div class="flex items-center space-x-2">
-                            <i data-lucide="play-circle" class="w-5 h-5 text-blue-400"></i>
-                            <h2 class="font-semibold text-white">Interactive Recovery Simulator</h2>
-                        </div>
-                        <span class="text-xs text-slate-400">Test Live Failure Scenarios</span>
+                        <div class="flex items-center space-x-2"><i data-lucide="play-circle" class="w-5 h-5 text-blue-400"></i><h2 class="font-semibold text-white">Interactive Simulator</h2></div>
                     </div>
-
-                    <div class="space-y-4 mt-4 text-sm">
+                    <div class="space-y-3 mt-4 text-sm">
                         <div>
-                            <label class="block text-xs font-medium text-slate-300 mb-1">Select Failure Scenario</label>
-                            <select id="scenario-select" class="w-full bg-[#091224] border border-slate-700 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-blue-500">
-                                <option value="transient_hdfc">1. Transient Bank Switch Downtime (HDFC UPI Timeout)</option>
-                                <option value="insufficient_funds">2. Insufficient Funds / Low Balance (SBI Debit)</option>
-                                <option value="otp_timeout">3. 2FA / OTP Auth Timeout (Credit Card)</option>
-                                <option value="cart_abandoned">4. High-Intent Cart Abandonment (Step 2 Drop)</option>
-                                <option value="mandate_expired">5. Expired Subscription Mandate (UPI Autopay)</option>
-                                <option value="b2b_overdue">6. B2B Overdue Invoice (>₹50k Voice Bot Dunning)</option>
-                                <option value="fraud_alert">7. High-Risk / Hotlisted Card (Defense Stop Control)</option>
+                            <label class="block text-xs font-medium text-slate-300 mb-1">Failure Scenario</label>
+                            <select id="scenario-select" class="w-full bg-[#091224] border border-slate-700 rounded-lg px-3 py-2 text-white text-xs focus:outline-none focus:border-blue-500">
+                                <option value="transient_hdfc">1. HDFC UPI Timeout</option>
+                                <option value="insufficient_funds">2. Insufficient Funds (SBI)</option>
+                                <option value="otp_timeout">3. OTP Auth Timeout</option>
+                                <option value="cart_abandoned">4. Cart Abandonment</option>
+                                <option value="mandate_expired">5. Mandate Expired</option>
+                                <option value="b2b_overdue">6. B2B Overdue Invoice</option>
+                                <option value="fraud_alert">7. Fraud / Card Blocked</option>
                             </select>
                         </div>
-
-                        <div class="grid grid-cols-2 gap-4">
-                            <div>
-                                <label class="block text-xs font-medium text-slate-300 mb-1">Transaction Amount (₹)</label>
-                                <input type="number" id="amount-input" value="2499" class="w-full bg-[#091224] border border-slate-700 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-blue-500">
-                            </div>
-                            <div>
-                                <label class="block text-xs font-medium text-slate-300 mb-1">Current Retry Count</label>
-                                <select id="retry-select" class="w-full bg-[#091224] border border-slate-700 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-blue-500">
-                                    <option value="0">0 (Fresh Failure)</option>
-                                    <option value="1">1 (First Retry)</option>
-                                    <option value="2">2 (Second Retry)</option>
-                                    <option value="3">3 (Max Reached -> Auto-Stop)</option>
+                        <div class="grid grid-cols-2 gap-3">
+                            <div><label class="block text-xs font-medium text-slate-300 mb-1">Amount (₹)</label><input type="number" id="amount-input" value="2499" class="w-full bg-[#091224] border border-slate-700 rounded-lg px-3 py-2 text-white text-xs focus:outline-none focus:border-blue-500"></div>
+                            <div><label class="block text-xs font-medium text-slate-300 mb-1">Retry Count</label>
+                                <select id="retry-select" class="w-full bg-[#091224] border border-slate-700 rounded-lg px-3 py-2 text-white text-xs focus:outline-none focus:border-blue-500">
+                                    <option value="0">0 (Fresh)</option><option value="1">1</option><option value="2">2</option><option value="3">3 (Max → Stop)</option>
                                 </select>
                             </div>
                         </div>
-
-                        <button onclick="runSimulation()" id="btn-simulate" class="w-full py-2.5 px-4 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-medium shadow-lg shadow-blue-500/20 flex items-center justify-center space-x-2 transition">
-                            <i data-lucide="sparkles" class="w-4 h-4"></i>
-                            <span>Trigger Autonomous Recovery Loop</span>
+                        <button onclick="runSimulation()" id="btn-simulate" class="w-full py-2.5 px-4 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-medium shadow-lg shadow-blue-500/20 flex items-center justify-center space-x-2 transition text-sm">
+                            <i data-lucide="sparkles" class="w-4 h-4"></i><span>Trigger Recovery Loop</span>
                         </button>
                     </div>
                 </div>
 
-                <!-- Step-by-Step Decision Trace DAG Visualizer -->
+                <!-- Phone Simulator -->
+                <div class="bg-[#0f1b35] border border-slate-800 rounded-xl p-5 glow-border">
+                    <div class="flex items-center space-x-2 pb-3 border-b border-slate-800">
+                        <i data-lucide="smartphone" class="w-5 h-5 text-green-400"></i>
+                        <h2 class="font-semibold text-white">Customer Phone Preview</h2>
+                    </div>
+                    <div class="mt-4 flex justify-center">
+                        <div class="phone-frame p-0">
+                            <div class="phone-notch"></div>
+                            <!-- WhatsApp Header -->
+                            <div class="bg-[#075e54] px-3 py-2 flex items-center space-x-2">
+                                <div class="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center text-white text-xs font-bold">R</div>
+                                <div><div class="text-white text-xs font-semibold">Razorpay Revive</div><div class="text-green-200 text-[9px]">AI Recovery Agent</div></div>
+                            </div>
+                            <!-- Chat Area -->
+                            <div class="p-3 space-y-2 overflow-y-auto custom-scrollbar" style="height: 310px; background: url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"200\" height=\"200\"><rect fill=\"%23091224\" width=\"200\" height=\"200\"/></svg>')" id="phone-chat-area">
+                                <div class="text-center text-slate-500 text-[10px] py-8">
+                                    Run a simulation to see the<br>customer outreach preview here
+                                </div>
+                            </div>
+                            <!-- Input Bar -->
+                            <div class="bg-[#1a1a2e] px-3 py-2 flex items-center space-x-2 border-t border-slate-800">
+                                <div class="flex-1 bg-[#091224] rounded-full px-3 py-1.5 text-[10px] text-slate-500">Type a message...</div>
+                                <div class="w-7 h-7 rounded-full bg-[#075e54] flex items-center justify-center"><i data-lucide="send" class="w-3 h-3 text-white"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MIDDLE: DAG Trace + Guardrails -->
+            <div class="lg:col-span-4 space-y-6">
+
+                <!-- Decision Trace DAG -->
                 <div class="bg-[#0f1b35] border border-slate-800 rounded-xl p-5 glow-border">
                     <div class="flex items-center justify-between pb-3 border-b border-slate-800">
-                        <div class="flex items-center space-x-2">
-                            <i data-lucide="git-merge" class="w-5 h-5 text-purple-400"></i>
-                            <h2 class="font-semibold text-white">Agent Decision & Guardrail Trace</h2>
-                        </div>
+                        <div class="flex items-center space-x-2"><i data-lucide="git-merge" class="w-5 h-5 text-purple-400"></i><h2 class="font-semibold text-white">Agent Decision Trace</h2></div>
                         <span class="text-xs px-2 py-0.5 rounded bg-slate-800 text-slate-300" id="trace-event-id">Ready</span>
                     </div>
-
                     <div class="mt-4 space-y-3" id="decision-trace-container">
                         <div class="text-center py-8 text-slate-500 text-sm">
                             <i data-lucide="arrow-up-circle" class="w-8 h-8 mx-auto mb-2 opacity-50"></i>
-                            Run a simulation above to observe live diagnostic steps and guardrail verification.
+                            Run a simulation to observe live diagnostic steps.
                         </div>
                     </div>
                 </div>
 
-                <!-- Guardrails Compliance Spec Box -->
+                <!-- Guardrails -->
                 <div class="bg-[#0f1b35] border border-slate-800 rounded-xl p-4 text-xs space-y-2">
-                    <div class="font-semibold text-slate-200 flex items-center space-x-1.5">
-                        <i data-lucide="shield" class="w-4 h-4 text-teal-400"></i>
-                        <span>Fintech-Grade Guardrail Policy Matrix</span>
-                    </div>
+                    <div class="font-semibold text-slate-200 flex items-center space-x-1.5"><i data-lucide="shield" class="w-4 h-4 text-teal-400"></i><span>Fintech-Grade Guardrail Matrix</span></div>
                     <div class="grid grid-cols-2 gap-2 text-slate-400 pt-1">
-                        <div class="flex items-center space-x-1.5 bg-[#091224] p-2 rounded border border-slate-800">
-                            <i data-lucide="check-circle" class="w-3.5 h-3.5 text-emerald-400"></i>
-                            <span>Max 3 Retries (Hard Cap)</span>
-                        </div>
-                        <div class="flex items-center space-x-1.5 bg-[#091224] p-2 rounded border border-slate-800">
-                            <i data-lucide="check-circle" class="w-3.5 h-3.5 text-emerald-400"></i>
-                            <span>TRAI Quiet Hours (9PM-8AM)</span>
-                        </div>
-                        <div class="flex items-center space-x-1.5 bg-[#091224] p-2 rounded border border-slate-800">
-                            <i data-lucide="check-circle" class="w-3.5 h-3.5 text-emerald-400"></i>
-                            <span>Anti-Spam Frequency (4h buffer)</span>
-                        </div>
-                        <div class="flex items-center space-x-1.5 bg-[#091224] p-2 rounded border border-slate-800">
-                            <i data-lucide="check-circle" class="w-3.5 h-3.5 text-emerald-400"></i>
-                            <span>Max 10% Bounded Discount</span>
-                        </div>
+                        <div class="flex items-center space-x-1.5 bg-[#091224] p-2 rounded border border-slate-800"><i data-lucide="check-circle" class="w-3.5 h-3.5 text-emerald-400"></i><span>Max Retries (Hard Cap)</span></div>
+                        <div class="flex items-center space-x-1.5 bg-[#091224] p-2 rounded border border-slate-800"><i data-lucide="check-circle" class="w-3.5 h-3.5 text-emerald-400"></i><span>TRAI Quiet Hours</span></div>
+                        <div class="flex items-center space-x-1.5 bg-[#091224] p-2 rounded border border-slate-800"><i data-lucide="check-circle" class="w-3.5 h-3.5 text-emerald-400"></i><span>Anti-Spam Frequency</span></div>
+                        <div class="flex items-center space-x-1.5 bg-[#091224] p-2 rounded border border-slate-800"><i data-lucide="check-circle" class="w-3.5 h-3.5 text-emerald-400"></i><span>Bounded Discount Cap</span></div>
                     </div>
                 </div>
 
+                <!-- Merchant Policy Panel -->
+                <div class="bg-[#0f1b35] border border-slate-800 rounded-xl p-5 glow-green">
+                    <div class="flex items-center justify-between pb-3 border-b border-slate-800">
+                        <div class="flex items-center space-x-2"><i data-lucide="settings" class="w-5 h-5 text-amber-400"></i><h2 class="font-semibold text-white">Merchant Policy Control</h2></div>
+                        <span class="text-[10px] px-2 py-0.5 rounded bg-amber-500/10 text-amber-400 border border-amber-500/20 font-medium">Dynamic Config</span>
+                    </div>
+                    <div class="mt-4 space-y-4 text-xs">
+                        <div>
+                            <div class="flex justify-between text-slate-300 mb-1"><span>Max Retry Cap</span><span class="font-mono text-blue-400" id="slider-retries-val">3</span></div>
+                            <input type="range" id="slider-retries" min="1" max="5" value="3" class="w-full" oninput="document.getElementById('slider-retries-val').textContent=this.value">
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-slate-300 mb-1"><span>Max Discount %</span><span class="font-mono text-blue-400" id="slider-discount-val">10</span></div>
+                            <input type="range" id="slider-discount" min="0" max="15" value="10" class="w-full" oninput="document.getElementById('slider-discount-val').textContent=this.value">
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-slate-300 mb-1"><span>Anti-Spam Cooldown (hours)</span><span class="font-mono text-blue-400" id="slider-cooldown-val">4</span></div>
+                            <input type="range" id="slider-cooldown" min="1" max="24" value="4" class="w-full" oninput="document.getElementById('slider-cooldown-val').textContent=this.value">
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-slate-300 mb-1"><span>B2B Voice Threshold (₹)</span><span class="font-mono text-blue-400" id="slider-b2b-val">50000</span></div>
+                            <input type="range" id="slider-b2b" min="5000" max="200000" step="5000" value="50000" class="w-full" oninput="document.getElementById('slider-b2b-val').textContent=Number(this.value).toLocaleString('en-IN')">
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <label class="text-slate-300 flex items-center space-x-2"><input type="checkbox" id="chk-quiet-hours" checked class="rounded"><span>Enforce TRAI Quiet Hours</span></label>
+                        </div>
+                        <p class="text-slate-500 text-[10px] leading-relaxed">These sliders dynamically control guardrail thresholds for both individual simulations and batch benchmarks.</p>
+                    </div>
+                </div>
             </div>
 
-            <!-- Right 6 Columns: 100+ Batch Benchmark & Real-time Audit Feed -->
-            <div class="lg:col-span-6 space-y-6">
+            <!-- RIGHT: Benchmark + Charts + Audit Feed -->
+            <div class="lg:col-span-4 space-y-6">
 
-                <!-- Batch Benchmark Runner -->
+                <!-- Batch Benchmark -->
                 <div class="bg-[#0f1b35] border border-slate-800 rounded-xl p-5 glow-border">
                     <div class="flex items-center justify-between pb-3 border-b border-slate-800">
-                        <div class="flex items-center space-x-2">
-                            <i data-lucide="cpu" class="w-5 h-5 text-emerald-400"></i>
-                            <h2 class="font-semibold text-white">100-Record Batch Benchmark Runner</h2>
-                        </div>
+                        <div class="flex items-center space-x-2"><i data-lucide="cpu" class="w-5 h-5 text-emerald-400"></i><h2 class="font-semibold text-white">100-Record Benchmark</h2></div>
                         <span class="text-xs px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 font-medium">Meets 'The Bar'</span>
                     </div>
-
                     <div class="mt-4 space-y-4">
-                        <p class="text-xs text-slate-300 leading-relaxed">
-                            Executes the autonomous pipeline over 100+ synthetic failed transactions across 7 failure taxonomy categories. Evaluates recovery yield, unit economics, and 100% stop-rule compliance.
-                        </p>
-
-                        <button onclick="runBatchBenchmark()" id="btn-benchmark" class="w-full py-2.5 px-4 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-medium shadow-lg shadow-emerald-500/20 flex items-center justify-center space-x-2 transition">
-                            <i data-lucide="play" class="w-4 h-4"></i>
-                            <span>Execute 100+ Batch Benchmark Test</span>
+                        <p class="text-xs text-slate-300 leading-relaxed">Executes the autonomous pipeline over 100+ synthetic failed transactions across 7 failure categories. Uses your live merchant policy sliders.</p>
+                        <button onclick="runBatchBenchmark()" id="btn-benchmark" class="w-full py-2.5 px-4 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-medium shadow-lg shadow-emerald-500/20 flex items-center justify-center space-x-2 transition text-sm">
+                            <i data-lucide="play" class="w-4 h-4"></i><span>Execute 100+ Batch Benchmark</span>
                         </button>
-
                         <div id="benchmark-results-container" class="hidden space-y-3 pt-2">
                             <div class="text-xs font-semibold text-slate-200">Category-wise Recovery Breakdown:</div>
                             <div class="overflow-x-auto border border-slate-800 rounded-lg">
                                 <table class="w-full text-left text-xs">
-                                    <thead class="bg-[#091224] text-slate-400 border-b border-slate-800">
-                                        <tr>
-                                            <th class="p-2">Category</th>
-                                            <th class="p-2">Count</th>
-                                            <th class="p-2">At Risk</th>
-                                            <th class="p-2">Recovered</th>
-                                            <th class="p-2">Yield</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="benchmark-table-body" class="divide-y divide-slate-800 text-slate-300">
-                                    </tbody>
+                                    <thead class="bg-[#091224] text-slate-400 border-b border-slate-800"><tr><th class="p-2">Category</th><th class="p-2">Count</th><th class="p-2">At Risk</th><th class="p-2">Recovered</th><th class="p-2">Yield</th></tr></thead>
+                                    <tbody id="benchmark-table-body" class="divide-y divide-slate-800 text-slate-300"></tbody>
                                 </table>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Real-time Immutable Audit Feed -->
+                <!-- Charts Section -->
                 <div class="bg-[#0f1b35] border border-slate-800 rounded-xl p-5 glow-border">
-                    <div class="flex items-center justify-between pb-3 border-b border-slate-800">
-                        <div class="flex items-center space-x-2">
-                            <i data-lucide="list" class="w-5 h-5 text-blue-400"></i>
-                            <h2 class="font-semibold text-white">Live Recovery Audit Stream</h2>
-                        </div>
-                        <button onclick="fetchAuditLogs()" class="text-xs text-blue-400 hover:underline flex items-center space-x-1">
-                            <i data-lucide="refresh-cw" class="w-3 h-3"></i>
-                            <span>Refresh</span>
-                        </button>
+                    <div class="flex items-center space-x-2 pb-3 border-b border-slate-800">
+                        <i data-lucide="bar-chart-3" class="w-5 h-5 text-indigo-400"></i>
+                        <h2 class="font-semibold text-white">Recovery Analytics</h2>
                     </div>
-
-                    <div class="mt-4 max-h-72 overflow-y-auto custom-scrollbar space-y-2" id="audit-feed-list">
-                        <div class="text-center py-6 text-slate-500 text-xs">Loading audit stream...</div>
+                    <div class="mt-4 space-y-4">
+                        <div><canvas id="chart-category-bar" height="160"></canvas></div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div><canvas id="chart-channel-donut" height="140"></canvas></div>
+                            <div class="flex flex-col items-center justify-center text-center" id="chart-summary-stats">
+                                <div class="text-slate-500 text-xs py-8">Run benchmark to see charts</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
+                <!-- Real-time Audit Feed -->
+                <div class="bg-[#0f1b35] border border-slate-800 rounded-xl p-5 glow-border">
+                    <div class="flex items-center justify-between pb-3 border-b border-slate-800">
+                        <div class="flex items-center space-x-2"><i data-lucide="list" class="w-5 h-5 text-blue-400"></i><h2 class="font-semibold text-white">Live Audit Stream</h2></div>
+                        <button onclick="fetchAuditLogs()" class="text-xs text-blue-400 hover:underline flex items-center space-x-1"><i data-lucide="refresh-cw" class="w-3 h-3"></i><span>Refresh</span></button>
+                    </div>
+                    <div class="mt-4 max-h-60 overflow-y-auto custom-scrollbar space-y-2" id="audit-feed-list">
+                        <div class="text-center py-6 text-slate-500 text-xs">Loading audit stream...</div>
+                    </div>
+                </div>
             </div>
 
         </div>
-
     </main>
 
-    <!-- App JavaScript Logic -->
     <script src="/static/app.js"></script>
-    <script>
-        lucide.createIcons();
-    </script>
+    <script>lucide.createIcons();</script>
 </body>
 </html>

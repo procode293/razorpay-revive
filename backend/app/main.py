@@ -2,6 +2,7 @@
 import os
 import sys
 import json
+import random
 from pathlib import Path
 from typing import Dict, Any, Optional
 from fastapi import FastAPI, HTTPException, BackgroundTasks
@@ -9,7 +10,7 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse, JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.models.schemas import FailureEvent, CustomerProfile, PaymentMethod
+from app.models.schemas import FailureEvent, CustomerProfile, PaymentMethod, MerchantPolicyConfig
 from app.engine.pipeline import RevenueRecoveryPipeline
 from app.storage.audit_log import AuditStore
 from benchmarks.generate_dataset import generate_benchmark_dataset
@@ -58,6 +59,21 @@ async def health_check():
     }
 
 
+@app.get("/api/optimizer/telemetry")
+async def get_bank_telemetry():
+    """Simulates real-time issuing bank switch health telemetry from Razorpay Optimizer."""
+    # Slightly jittered for live dynamic feel
+    banks = [
+        {"bank": "HDFC Bank", "rail": "UPI 2.0", "uptime_pct": 98.4, "status": "HEALTHY", "latency_ms": 142, "avg_recovery_rate": 91.2},
+        {"bank": "State Bank of India", "rail": "Netbanking", "uptime_pct": 68.5, "status": "CONGESTED", "latency_ms": 1850, "avg_recovery_rate": 64.0},
+        {"bank": "ICICI Bank", "rail": "Cards / 3DS", "uptime_pct": 99.1, "status": "HEALTHY", "latency_ms": 110, "avg_recovery_rate": 94.5},
+        {"bank": "Axis Bank", "rail": "UPI Autopay", "uptime_pct": 92.7, "status": "HEALTHY", "latency_ms": 280, "avg_recovery_rate": 86.8},
+        {"bank": "Kotak Mahindra", "rail": "Smart Router", "uptime_pct": 95.3, "status": "HEALTHY", "latency_ms": 195, "avg_recovery_rate": 89.0},
+        {"bank": "NPCI Core Switch", "rail": "IMPS / UPI Switch", "uptime_pct": 97.8, "status": "HEALTHY", "latency_ms": 95, "avg_recovery_rate": 93.0},
+    ]
+    return {"telemetry": banks}
+
+
 @app.post("/api/events/ingest")
 async def ingest_failure_event(event: FailureEvent):
     """Ingests a live payment drop-off / failure and executes autonomous recovery."""
@@ -72,11 +88,15 @@ async def ingest_failure_event(event: FailureEvent):
 async def simulate_scenario(payload: Dict[str, Any]):
     """Simulates realistic scenarios from the interactive playground."""
     scenario_type = payload.get("scenario_type", "transient_hdfc")
-    amount = float(payload.get("amount", 1999.0))
+    amount = float(payload.get("amount", 2499.0))
     customer_name = payload.get("customer_name", "Aarav Sharma")
     phone = payload.get("phone", "+919876543210")
     email = payload.get("email", "aarav.sharma@example.com")
     retry_count = int(payload.get("retry_count", 0))
+
+    # Optional dynamic merchant policy overrides
+    policy_data = payload.get("policy", {})
+    policy = MerchantPolicyConfig(**policy_data) if policy_data else MerchantPolicyConfig()
 
     scenarios = {
         "transient_hdfc": {
@@ -133,7 +153,7 @@ async def simulate_scenario(payload: Dict[str, Any]):
         ),
     )
 
-    result = pipeline.process_event(event)
+    result = pipeline.process_event(event, policy=policy)
     return JSONResponse(content=result)
 
 
@@ -152,11 +172,14 @@ async def get_metrics():
 
 
 @app.post("/api/benchmark/run")
-async def trigger_benchmark_run():
+async def trigger_benchmark_run(payload: Optional[Dict[str, Any]] = None):
     """Executes the full 100-record batch benchmark and returns comparative metrics."""
+    policy_data = (payload or {}).get("policy", {})
+    policy = MerchantPolicyConfig(**policy_data) if policy_data else MerchantPolicyConfig()
+
     dataset = generate_benchmark_dataset(100, seed=42)
     evaluator = BenchmarkEvaluator()
-    summary = evaluator.evaluate_dataset(dataset)
+    summary = evaluator.evaluate_dataset(dataset, policy=policy)
     return summary.model_dump(mode="json")
 
 

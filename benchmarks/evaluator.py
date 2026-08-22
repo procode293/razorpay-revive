@@ -3,7 +3,7 @@ import os
 import json
 from collections import defaultdict
 from typing import List, Dict, Any, Optional
-from app.models.schemas import FailureEvent, BatchBenchmarkSummary
+from app.models.schemas import FailureEvent, BatchBenchmarkSummary, MerchantPolicyConfig
 from app.engine.pipeline import RevenueRecoveryPipeline
 from app.storage.audit_log import AuditStore
 
@@ -12,11 +12,15 @@ class BenchmarkEvaluator:
     """Runs automated batch evaluations over synthetic failed payment records."""
 
     def __init__(self, db_path: Optional[str] = None):
-        # Allow AuditStore to default to /tmp on Vercel serverless environment
         self.audit_store = AuditStore(db_path=db_path)
         self.pipeline = RevenueRecoveryPipeline(audit_store=self.audit_store)
 
-    def evaluate_dataset(self, dataset: List[Dict[str, Any]], seed: int = 42) -> BatchBenchmarkSummary:
+    def evaluate_dataset(
+        self,
+        dataset: List[Dict[str, Any]],
+        policy: Optional[MerchantPolicyConfig] = None,
+        seed: int = 42,
+    ) -> BatchBenchmarkSummary:
         """Executes full evaluation across all records in the batch."""
         self.audit_store.clear()
         
@@ -24,6 +28,7 @@ class BenchmarkEvaluator:
         total_recovered = 0.0
         total_cost = 0.0
         guardrail_passes = 0
+
         category_stats = defaultdict(lambda: {
             "count": 0,
             "at_risk_inr": 0.0,
@@ -33,15 +38,22 @@ class BenchmarkEvaluator:
             "actions": defaultdict(int),
         })
 
+        channel_stats = defaultdict(lambda: {
+            "count": 0,
+            "recovered_inr": 0.0,
+            "cost_inr": 0.0,
+        })
+
         for record in dataset:
             event = FailureEvent(**record)
             total_at_risk += event.amount
 
             # Run through full autonomous pipeline
-            result = self.pipeline.process_event(event)
+            result = self.pipeline.process_event(event, policy=policy)
 
             cat = result["diagnosis"]["category"]
             act = result["plan"]["action_type"]
+            chan = result["plan"]["channel"]
             cost = result["plan"]["cost_of_intervention_inr"]
             rec_money = result["execution"]["money_recovered_inr"]
             is_approved = result["guardrail_verdict"]["is_approved"]
@@ -59,6 +71,11 @@ class BenchmarkEvaluator:
             cat_dict["actions"][act] += 1
             if result["execution"]["status"] == "RECOVERED":
                 cat_dict["recovered_count"] += 1
+
+            ch_dict = channel_stats[chan]
+            ch_dict["count"] += 1
+            ch_dict["recovered_inr"] += rec_money
+            ch_dict["cost_inr"] += cost
 
         total_txns = len(dataset)
         gross_rate = (total_recovered / total_at_risk * 100) if total_at_risk > 0 else 0.0
@@ -78,6 +95,14 @@ class BenchmarkEvaluator:
                 "dominant_actions": dict(data["actions"]),
             }
 
+        formatted_channels = {}
+        for ch, data in channel_stats.items():
+            formatted_channels[ch] = {
+                "count": data["count"],
+                "recovered_inr": round(data["recovered_inr"], 2),
+                "cost_inr": round(data["cost_inr"], 2),
+            }
+
         return BatchBenchmarkSummary(
             total_transactions_processed=total_txns,
             total_value_at_risk_inr=round(total_at_risk, 2),
@@ -88,4 +113,5 @@ class BenchmarkEvaluator:
             roi_multiple=round(roi_multiple, 2),
             guardrail_adherence_pct=round(guardrail_pct, 2),
             breakdown_by_category=formatted_categories,
+            channel_breakdown=formatted_channels,
         )
