@@ -1,7 +1,8 @@
 """Quantitative Batch Evaluator for Razorpay Revive (Meets Track 03 'The Bar')."""
+import os
 import json
 from collections import defaultdict
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Optional
 from app.models.schemas import FailureEvent, BatchBenchmarkSummary
 from app.engine.pipeline import RevenueRecoveryPipeline
 from app.storage.audit_log import AuditStore
@@ -10,7 +11,8 @@ from app.storage.audit_log import AuditStore
 class BenchmarkEvaluator:
     """Runs automated batch evaluations over synthetic failed payment records."""
 
-    def __init__(self, db_path: str = "revive_benchmark.db"):
+    def __init__(self, db_path: Optional[str] = None):
+        # Allow AuditStore to default to /tmp on Vercel serverless environment
         self.audit_store = AuditStore(db_path=db_path)
         self.pipeline = RevenueRecoveryPipeline(audit_store=self.audit_store)
 
