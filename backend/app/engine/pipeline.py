@@ -50,9 +50,9 @@ class RevenueRecoveryPipeline:
         self.audit_store.record_cycle(event, diagnosis, plan, verdict, execution)
 
         return {
-            "event": event.model_dump(),
-            "diagnosis": diagnosis.model_dump(),
-            "plan": plan.model_dump(),
-            "guardrail_verdict": verdict.model_dump(),
-            "execution": execution.model_dump(),
+            "event": event.model_dump(mode="json"),
+            "diagnosis": diagnosis.model_dump(mode="json"),
+            "plan": plan.model_dump(mode="json"),
+            "guardrail_verdict": verdict.model_dump(mode="json"),
+            "execution": execution.model_dump(mode="json"),
         }
