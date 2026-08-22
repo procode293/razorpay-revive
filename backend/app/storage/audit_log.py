@@ -1,4 +1,5 @@
 """Immutable Audit Trail & Recovery Storage for Razorpay Revive."""
+import os
 import sqlite3
 import json
 from datetime import datetime
@@ -15,8 +16,16 @@ from app.models.schemas import (
 class AuditStore:
     """Thread-safe SQLite store for financial audit logging and recovery metrics."""
 
-    def __init__(self, db_path: str = "revive_audit.db"):
-        self.db_path = db_path
+    def __init__(self, db_path: Optional[str] = None):
+        # On Vercel / serverless lambda, write to writable /tmp directory
+        if db_path is None:
+            if os.getenv("VERCEL"):
+                self.db_path = "/tmp/revive_audit.db"
+            else:
+                self.db_path = "revive_audit.db"
+        else:
+            self.db_path = db_path
+
         self._init_db()
 
     def _get_connection(self):
@@ -75,10 +84,10 @@ class AuditStore:
                     event.order_id,
                     event.customer.name,
                     event.amount,
-                    event.payment_method.value,
+                    event.payment_method.value if hasattr(event.payment_method, "value") else str(event.payment_method),
                     event.error_code,
-                    diagnosis.category.value,
-                    plan.action_type.value,
+                    diagnosis.category.value if hasattr(diagnosis.category, "value") else str(diagnosis.category),
+                    plan.action_type.value if hasattr(plan.action_type, "value") else str(plan.action_type),
                     plan.channel,
                     1 if verdict.is_approved else 0,
                     execution.status,
