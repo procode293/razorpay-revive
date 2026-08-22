@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv
+
+# Database & Logs
+*.db
+*.sqlite
+*.log
+
+# Pytest & Cache
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Environment Variables
+.env
+
+# OS
+.DS_Store
+Thumbs.db

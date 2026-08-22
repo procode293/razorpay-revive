@@ -1,0 +1,95 @@
+{
+  "total_transactions_processed": 100,
+  "total_value_at_risk_inr": 1029904.53,
+  "total_value_recovered_inr": 477465.61,
+  "gross_recovery_rate_pct": 46.36,
+  "total_intervention_cost_inr": 45.6,
+  "net_economic_value_inr": 477420.01,
+  "roi_multiple": 10470.74,
+  "guardrail_adherence_pct": 100.0,
+  "breakdown_by_category": {
+    "GENERIC_UNKNOWN_FAILURE": {
+      "count": 44,
+      "at_risk_inr": 328833.91,
+      "recovered_inr": 179267.84,
+      "recovery_rate_pct": 54.52,
+      "intervention_cost_inr": 22.0,
+      "dominant_actions": {
+        "DYNAMIC_PAYMENT_LINK": 44
+      }
+    },
+    "TRANSIENT_BANK_DOWNTIME": {
+      "count": 19,
+      "at_risk_inr": 50675.77,
+      "recovered_inr": 47384.31,
+      "recovery_rate_pct": 93.5,
+      "intervention_cost_inr": 0.0,
+      "dominant_actions": {
+        "AUTO_RETRY_SMART_WINDOW": 19
+      }
+    },
+    "MANDATE_EXPIRED_OR_REVOKED": {
+      "count": 8,
+      "at_risk_inr": 17041.42,
+      "recovered_inr": 9288.79,
+      "recovery_rate_pct": 54.51,
+      "intervention_cost_inr": 4.0,
+      "dominant_actions": {
+        "DYNAMIC_PAYMENT_LINK": 8
+      }
+    },
+    "INSUFFICIENT_FUNDS": {
+      "count": 7,
+      "at_risk_inr": 29080.53,
+      "recovered_inr": 8593.22,
+      "recovery_rate_pct": 29.55,
+      "intervention_cost_inr": 3.0,
+      "dominant_actions": {
+        "PERSONALIZED_WHATSAPP_NUDGE": 6,
+        "HARD_STOP_ESCALATE": 1
+      }
+    },
+    "FRAUD_OR_CARD_BLOCKED": {
+      "count": 4,
+      "at_risk_inr": 128421.85,
+      "recovered_inr": 0.0,
+      "recovery_rate_pct": 0.0,
+      "intervention_cost_inr": 0.0,
+      "dominant_actions": {
+        "HARD_STOP_ESCALATE": 4
+      }
+    },
+    "AUTH_OR_OTP_TIMEOUT": {
+      "count": 6,
+      "at_risk_inr": 21654.21,
+      "recovered_inr": 16415.15,
+      "recovery_rate_pct": 75.81,
+      "intervention_cost_inr": 3.0,
+      "dominant_actions": {
+        "DYNAMIC_PAYMENT_LINK": 6
+      }
+    },
+    "CHECKOUT_ABANDONMENT": {
+      "count": 7,
+      "at_risk_inr": 71131.63,
+      "recovered_inr": 53750.56,
+      "recovery_rate_pct": 75.56,
+      "intervention_cost_inr": 3.5,
+      "dominant_actions": {
+        "BOUNDED_DISCOUNT_OFFER": 7
+      }
+    },
+    "B2B_OVERDUE_INVOICE": {
+      "count": 5,
+      "at_risk_inr": 383065.21,
+      "recovered_inr": 162765.74,
+      "recovery_rate_pct": 42.49,
+      "intervention_cost_inr": 10.1,
+      "dominant_actions": {
+        "HINGLISH_VOICE_OUTREACH": 4,
+        "COMPLIANT_EMAIL_DUNNING": 1
+      }
+    }
+  },
+  "generated_at": "2026-08-22T18:07:18.320611"
+}

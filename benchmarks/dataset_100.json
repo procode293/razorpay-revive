@@ -1,0 +1,2702 @@
+[
+  {
+    "event_id": "evt_bench_0001",
+    "order_id": "order_rzp_126225",
+    "payment_id": "pay_2458591",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 14054.41,
+    "currency": "INR",
+    "payment_method": "upi",
+    "error_code": "CART_DROP_OFF_HIGH_INTENT",
+    "error_description": "User exited Razorpay Standard Checkout after selecting payment method",
+    "timestamp": "2026-08-22T18:07:05.217478",
+    "retry_count": 0,
+    "customer": {
+      "customer_id": "cust_0001",
+      "name": "Ananya Iyer",
+      "phone": "+919536146025",
+      "email": "ananya.64@example.com",
+      "preferred_language": "hinglish",
+      "segment": "MEDIUM_LTV",
+      "historical_payment_success_rate": 0.71
+    },
+    "metadata": {
+      "expected_category": "CHECKOUT_ABANDONMENT",
+      "last_contact_hours_ago": 12
+    }
+  },
+  {
+    "event_id": "evt_bench_0002",
+    "order_id": "order_rzp_731262",
+    "payment_id": "pay_8536477",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 460.12,
+    "currency": "INR",
+    "payment_method": "card_debit",
+    "error_code": "NPCI_SWITCH_BUSY",
+    "error_description": "Bank server returned HTTP 503 Service Unavailable",
+    "timestamp": "2026-08-22T18:07:05.217867",
+    "retry_count": 0,
+    "customer": {
+      "customer_id": "cust_0002",
+      "name": "Manish Bansal",
+      "phone": "+919530876844",
+      "email": "manish.45@example.com",
+      "preferred_language": "hinglish",
+      "segment": "MEDIUM_LTV",
+      "historical_payment_success_rate": 0.89
+    },
+    "metadata": {
+      "expected_category": "TRANSIENT_BANK_DOWNTIME",
+      "last_contact_hours_ago": 12
+    }
+  },
+  {
+    "event_id": "evt_bench_0003",
+    "order_id": "order_rzp_456778",
+    "payment_id": "pay_6770619",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 1049.25,
+    "currency": "INR",
+    "payment_method": "upi_autopay",
+    "error_code": "MANDATE_EXPIRED_SUB",
+    "error_description": "Customer revoked automated mandate on PSP app",
+    "timestamp": "2026-08-22T18:07:05.217978",
+    "retry_count": 0,
+    "customer": {
+      "customer_id": "cust_0003",
+      "name": "Kavya Bhat",
+      "phone": "+919592983555",
+      "email": "kavya.43@example.com",
+      "preferred_language": "hinglish",
+      "segment": "STANDARD",
+      "historical_payment_success_rate": 0.88
+    },
+    "metadata": {
+      "expected_category": "MANDATE_EXPIRED_OR_REVOKED",
+      "last_contact_hours_ago": 1
+    }
+  },
+  {
+    "event_id": "evt_bench_0004",
+    "order_id": "order_rzp_182627",
+    "payment_id": "pay_4823498",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 2640.97,
+    "currency": "INR",
+    "payment_method": "upi",
+    "error_code": "SBI_NETBANKING_503",
+    "error_description": "Bank server returned HTTP 503 Service Unavailable",
+    "timestamp": "2026-08-22T18:07:05.218046",
+    "retry_count": 0,
+    "customer": {
+      "customer_id": "cust_0004",
+      "name": "Siddharth Rao",
+      "phone": "+918242911821",
+      "email": "siddharth.20@example.com",
+      "preferred_language": "hinglish",
+      "segment": "MEDIUM_LTV",
+      "historical_payment_success_rate": 0.92
+    },
+    "metadata": {
+      "expected_category": "TRANSIENT_BANK_DOWNTIME",
+      "last_contact_hours_ago": 48
+    }
+  },
+  {
+    "event_id": "evt_bench_0005",
+    "order_id": "order_rzp_766563",
+    "payment_id": "pay_2197935",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 7172.72,
+    "currency": "INR",
+    "payment_method": "card_debit",
+    "error_code": "INSUFFICIENT_FUNDS_SBI",
+    "error_description": "Bank declined authorization due to daily UPI debit limit",
+    "timestamp": "2026-08-22T18:07:05.218099",
+    "retry_count": 0,
+    "customer": {
+      "customer_id": "cust_0005",
+      "name": "Amitav Sen",
+      "phone": "+919616197747",
+      "email": "amitav.91@example.com",
+      "preferred_language": "hinglish",
+      "segment": "STANDARD",
+      "historical_payment_success_rate": 0.83
+    },
+    "metadata": {
+      "expected_category": "INSUFFICIENT_FUNDS",
+      "last_contact_hours_ago": 12
+    }
+  },
+  {
+    "event_id": "evt_bench_0006",
+    "order_id": "order_rzp_497887",
+    "payment_id": "pay_4842788",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 1470.28,
+    "currency": "INR",
+    "payment_method": "netbanking",
+    "error_code": "NPCI_SWITCH_BUSY",
+    "error_description": "Bank server returned HTTP 503 Service Unavailable",
+    "timestamp": "2026-08-22T18:07:05.218151",
+    "retry_count": 1,
+    "customer": {
+      "customer_id": "cust_0006",
+      "name": "Amitav Sen",
+      "phone": "+917137869475",
+      "email": "amitav.50@example.com",
+      "preferred_language": "en",
+      "segment": "MEDIUM_LTV",
+      "historical_payment_success_rate": 0.77
+    },
+    "metadata": {
+      "expected_category": "TRANSIENT_BANK_DOWNTIME",
+      "last_contact_hours_ago": 12
+    }
+  },
+  {
+    "event_id": "evt_bench_0007",
+    "order_id": "order_rzp_322955",
+    "payment_id": "pay_5408072",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 12573.2,
+    "currency": "INR",
+    "payment_method": "upi",
+    "error_code": "EXIT_CHECKOUT_STEP_2",
+    "error_description": "User closed browser tab during order review step",
+    "timestamp": "2026-08-22T18:07:05.218212",
+    "retry_count": 0,
+    "customer": {
+      "customer_id": "cust_0007",
+      "name": "Kunal Gupta",
+      "phone": "+919510777721",
+      "email": "kunal.64@example.com",
+      "preferred_language": "hi",
+      "segment": "STANDARD",
+      "historical_payment_success_rate": 0.8
+    },
+    "metadata": {
+      "expected_category": "CHECKOUT_ABANDONMENT",
+      "last_contact_hours_ago": 12
+    }
+  },
+  {
+    "event_id": "evt_bench_0008",
+    "order_id": "order_rzp_617488",
+    "payment_id": "pay_8082668",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 727.27,
+    "currency": "INR",
+    "payment_method": "upi",
+    "error_code": "GATEWAY_TIMEOUT_HDFC",
+    "error_description": "Issuing bank gateway failed to acknowledge payment packet within 15s",
+    "timestamp": "2026-08-22T18:07:05.218260",
+    "retry_count": 1,
+    "customer": {
+      "customer_id": "cust_0008",
+      "name": "Manish Bansal",
+      "phone": "+919561557300",
+      "email": "manish.18@example.com",
+      "preferred_language": "en",
+      "segment": "MEDIUM_LTV",
+      "historical_payment_success_rate": 0.8
+    },
+    "metadata": {
+      "expected_category": "TRANSIENT_BANK_DOWNTIME",
+      "last_contact_hours_ago": 48
+    }
+  },
+  {
+    "event_id": "evt_bench_0009",
+    "order_id": "order_rzp_680099",
+    "payment_id": "pay_6707197",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 10468.44,
+    "currency": "INR",
+    "payment_method": "netbanking",
+    "error_code": "OTP_EXPIRED_2FA",
+    "error_description": "Customer did not enter 2FA SMS OTP within 180 seconds",
+    "timestamp": "2026-08-22T18:07:05.218312",
+    "retry_count": 1,
+    "customer": {
+      "customer_id": "cust_0009",
+      "name": "Rahul Joshi",
+      "phone": "+917479112937",
+      "email": "rahul.47@example.com",
+      "preferred_language": "en",
+      "segment": "HIGH_LTV",
+      "historical_payment_success_rate": 0.74
+    },
+    "metadata": {
+      "expected_category": "AUTH_OR_OTP_TIMEOUT",
+      "last_contact_hours_ago": 6
+    }
+  },
+  {
+    "event_id": "evt_bench_0010",
+    "order_id": "order_rzp_624902",
+    "payment_id": "pay_4337174",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 2356.3,
+    "currency": "INR",
+    "payment_method": "upi_autopay",
+    "error_code": "MANDATE_LIMIT_BREACHED",
+    "error_description": "UPI Autopay recurring mandate expired on billing anniversary",
+    "timestamp": "2026-08-22T18:07:05.218363",
+    "retry_count": 0,
+    "customer": {
+      "customer_id": "cust_0010",
+      "name": "Rahul Joshi",
+      "phone": "+917656439677",
+      "email": "rahul.57@example.com",
+      "preferred_language": "hinglish",
+      "segment": "MEDIUM_LTV",
+      "historical_payment_success_rate": 0.83
+    },
+    "metadata": {
+      "expected_category": "MANDATE_EXPIRED_OR_REVOKED",
+      "last_contact_hours_ago": 1
+    }
+  },
+  {
+    "event_id": "evt_bench_0011",
+    "order_id": "order_rzp_439902",
+    "payment_id": "pay_2321324",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 2377.71,
+    "currency": "INR",
+    "payment_method": "netbanking",
+    "error_code": "GATEWAY_TIMEOUT_HDFC",
+    "error_description": "NPCI switch under high congestion",
+    "timestamp": "2026-08-22T18:07:05.218411",
+    "retry_count": 0,
+    "customer": {
+      "customer_id": "cust_0011",
+      "name": "Simran Kaur",
+      "phone": "+917367878761",
+      "email": "simran.72@example.com",
+      "preferred_language": "hinglish",
+      "segment": "STANDARD",
+      "historical_payment_success_rate": 0.94
+    },
+    "metadata": {
+      "expected_category": "TRANSIENT_BANK_DOWNTIME",
+      "last_contact_hours_ago": 1
+    }
+  },
+  {
+    "event_id": "evt_bench_0012",
+    "order_id": "order_rzp_234628",
+    "payment_id": "pay_4553384",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 44585.05,
+    "currency": "INR",
+    "payment_method": "card_credit",
+    "error_code": "STOLEN_CARD_DECLINE",
+    "error_description": "Card identified on national hotlist or high-velocity risk trigger",
+    "timestamp": "2026-08-22T18:07:05.218460",
+    "retry_count": 0,
+    "customer": {
+      "customer_id": "cust_0012",
+      "name": "Vikram Singh",
+      "phone": "+919316259067",
+      "email": "vikram.98@example.com",
+      "preferred_language": "hinglish",
+      "segment": "STANDARD",
+      "historical_payment_success_rate": 0.88
+    },
+    "metadata": {
+      "expected_category": "FRAUD_OR_CARD_BLOCKED",
+      "last_contact_hours_ago": 48
+    }
+  },
+  {
+    "event_id": "evt_bench_0013",
+    "order_id": "order_rzp_559381",
+    "payment_id": "pay_4860684",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 2727.96,
+    "currency": "INR",
+    "payment_method": "upi_autopay",
+    "error_code": "AUTOPAY_REVOKED_USER",
+    "error_description": "UPI Autopay recurring mandate expired on billing anniversary",
+    "timestamp": "2026-08-22T18:07:05.218507",
+    "retry_count": 0,
+    "customer": {
+      "customer_id": "cust_0013",
+      "name": "Neha Kulkarni",
+      "phone": "+919527331058",
+      "email": "neha.38@example.com",
+      "preferred_language": "hinglish",
+      "segment": "STANDARD",
+      "historical_payment_success_rate": 0.72
+    },
+    "metadata": {
+      "expected_category": "MANDATE_EXPIRED_OR_REVOKED",
+      "last_contact_hours_ago": 6
+    }
+  },
+  {
+    "event_id": "evt_bench_0014",
+    "order_id": "order_rzp_132938",
+    "payment_id": "pay_3219824",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 3917.49,
+    "currency": "INR",
+    "payment_method": "upi",
+    "error_code": "GATEWAY_TIMEOUT_HDFC",
+    "error_description": "Bank server returned HTTP 503 Service Unavailable",
+    "timestamp": "2026-08-22T18:07:05.218550",
+    "retry_count": 0,
+    "customer": {
+      "customer_id": "cust_0014",
+      "name": "Rohan Mehta",
+      "phone": "+919452611418",
+      "email": "rohan.83@example.com",
+      "preferred_language": "en",
+      "segment": "STANDARD",
+      "historical_payment_success_rate": 0.76
+    },
+    "metadata": {
+      "expected_category": "TRANSIENT_BANK_DOWNTIME",
+      "last_contact_hours_ago": 48
+    }
+  },
+  {
+    "event_id": "evt_bench_0015",
+    "order_id": "order_rzp_198907",
+    "payment_id": "pay_1908841",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 1274.54,
+    "currency": "INR",
+    "payment_method": "card_debit",
+    "error_code": "ACCOUNT_BALANCE_LOW",
+    "error_description": "Bank declined authorization due to daily UPI debit limit",
+    "timestamp": "2026-08-22T18:07:05.218596",
+    "retry_count": 1,
+    "customer": {
+      "customer_id": "cust_0015",
+      "name": "Aditya Verma",
+      "phone": "+919892078691",
+      "email": "aditya.93@example.com",
+      "preferred_language": "hi",
+      "segment": "STANDARD",
+      "historical_payment_success_rate": 0.72
+    },
+    "metadata": {
+      "expected_category": "INSUFFICIENT_FUNDS",
+      "last_contact_hours_ago": 48
+    }
+  },
+  {
+    "event_id": "evt_bench_0016",
+    "order_id": "order_rzp_939482",
+    "payment_id": "pay_4078418",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 2625.52,
+    "currency": "INR",
+    "payment_method": "upi_autopay",
+    "error_code": "MANDATE_EXPIRED_SUB",
+    "error_description": "UPI Autopay recurring mandate expired on billing anniversary",
+    "timestamp": "2026-08-22T18:07:05.218639",
+    "retry_count": 0,
+    "customer": {
+      "customer_id": "cust_0016",
+      "name": "Kunal Gupta",
+      "phone": "+918196342297",
+      "email": "kunal.69@example.com",
+      "preferred_language": "hinglish",
+      "segment": "STANDARD",
+      "historical_payment_success_rate": 0.92
+    },
+    "metadata": {
+      "expected_category": "MANDATE_EXPIRED_OR_REVOKED",
+      "last_contact_hours_ago": 6
+    }
+  },
+  {
+    "event_id": "evt_bench_0017",
+    "order_id": "order_rzp_202664",
+    "payment_id": "pay_3790237",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 1555.52,
+    "currency": "INR",
+    "payment_method": "card_credit",
+    "error_code": "BAD_REQUEST_PAYMENT_TIMED_OUT",
+    "error_description": "Customer did not enter 2FA SMS OTP within 180 seconds",
+    "timestamp": "2026-08-22T18:07:05.218707",
+    "retry_count": 1,
+    "customer": {
+      "customer_id": "cust_0017",
+      "name": "Ritu Agrawal",
+      "phone": "+918745535098",
+      "email": "ritu.72@example.com",
+      "preferred_language": "en",
+      "segment": "HIGH_LTV",
+      "historical_payment_success_rate": 0.75
+    },
+    "metadata": {
+      "expected_category": "AUTH_OR_OTP_TIMEOUT",
+      "last_contact_hours_ago": 48
+    }
+  },
+  {
+    "event_id": "evt_bench_0018",
+    "order_id": "order_rzp_497382",
+    "payment_id": "pay_9164991",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 358.94,
+    "currency": "INR",
+    "payment_method": "netbanking",
+    "error_code": "ICICI_UPI_DOWN",
+    "error_description": "NPCI switch under high congestion",
+    "timestamp": "2026-08-22T18:07:05.218758",
+    "retry_count": 0,
+    "customer": {
+      "customer_id": "cust_0018",
+      "name": "Sneha Reddy",
+      "phone": "+917664847319",
+      "email": "sneha.34@example.com",
+      "preferred_language": "en",
+      "segment": "STANDARD",
+      "historical_payment_success_rate": 0.75
+    },
+    "metadata": {
+      "expected_category": "TRANSIENT_BANK_DOWNTIME",
+      "last_contact_hours_ago": 6
+    }
+  },
+  {
+    "event_id": "evt_bench_0019",
+    "order_id": "order_rzp_163918",
+    "payment_id": "pay_3641282",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 14164.93,
+    "currency": "INR",
+    "payment_method": "card_credit",
+    "error_code": "CART_DROP_OFF_HIGH_INTENT",
+    "error_description": "User exited Razorpay Standard Checkout after selecting payment method",
+    "timestamp": "2026-08-22T18:07:05.218807",
+    "retry_count": 1,
+    "customer": {
+      "customer_id": "cust_0019",
+      "name": "Ritu Agrawal",
+      "phone": "+917244295904",
+      "email": "ritu.75@example.com",
+      "preferred_language": "hinglish",
+      "segment": "STANDARD",
+      "historical_payment_success_rate": 0.91
+    },
+    "metadata": {
+      "expected_category": "CHECKOUT_ABANDONMENT",
+      "last_contact_hours_ago": 6
+    }
+  },
+  {
+    "event_id": "evt_bench_0020",
+    "order_id": "order_rzp_808011",
+    "payment_id": "pay_2375453",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 16123.15,
+    "currency": "INR",
+    "payment_method": "upi",
+    "error_code": "EXIT_CHECKOUT_STEP_2",
+    "error_description": "User exited Razorpay Standard Checkout after selecting payment method",
+    "timestamp": "2026-08-22T18:07:05.218856",
+    "retry_count": 0,
+    "customer": {
+      "customer_id": "cust_0020",
+      "name": "Rohan Mehta",
+      "phone": "+918800557283",
+      "email": "rohan.94@example.com",
+      "preferred_language": "hi",
+      "segment": "STANDARD",
+      "historical_payment_success_rate": 0.84
+    },
+    "metadata": {
+      "expected_category": "CHECKOUT_ABANDONMENT",
+      "last_contact_hours_ago": 24
+    }
+  },
+  {
+    "event_id": "evt_bench_0021",
+    "order_id": "order_rzp_802258",
+    "payment_id": "pay_8670955",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 6229.25,
+    "currency": "INR",
+    "payment_method": "card_debit",
+    "error_code": "INSUFFICIENT_FUNDS_SBI",
+    "error_description": "Bank declined authorization due to daily UPI debit limit",
+    "timestamp": "2026-08-22T18:07:05.218905",
+    "retry_count": 0,
+    "customer": {
+      "customer_id": "cust_0021",
+      "name": "Aditya Verma",
+      "phone": "+918357970698",
+      "email": "aditya.19@example.com",
+      "preferred_language": "hinglish",
+      "segment": "STANDARD",
+      "historical_payment_success_rate": 0.81
+    },
+    "metadata": {
+      "expected_category": "INSUFFICIENT_FUNDS",
+      "last_contact_hours_ago": 1
+    }
+  },
+  {
+    "event_id": "evt_bench_0022",
+    "order_id": "order_rzp_663750",
+    "payment_id": "pay_7199635",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 1234.59,
+    "currency": "INR",
+    "payment_method": "netbanking",
+    "error_code": "SBI_NETBANKING_503",
+    "error_description": "Issuing bank gateway failed to acknowledge payment packet within 15s",
+    "timestamp": "2026-08-22T18:07:05.218952",
+    "retry_count": 1,
+    "customer": {
+      "customer_id": "cust_0022",
+      "name": "Rohan Mehta",
+      "phone": "+918224011538",
+      "email": "rohan.30@example.com",
+      "preferred_language": "en",
+      "segment": "HIGH_LTV",
+      "historical_payment_success_rate": 0.91
+    },
+    "metadata": {
+      "expected_category": "TRANSIENT_BANK_DOWNTIME",
+      "last_contact_hours_ago": 24
+    }
+  },
+  {
+    "event_id": "evt_bench_0023",
+    "order_id": "order_rzp_108203",
+    "payment_id": "pay_2936571",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 12786.91,
+    "currency": "INR",
+    "payment_method": "upi",
+    "error_code": "ABANDONED_CHECKOUT",
+    "error_description": "User closed browser tab during order review step",
+    "timestamp": "2026-08-22T18:07:05.219000",
+    "retry_count": 0,
+    "customer": {
+      "customer_id": "cust_0023",
+      "name": "Manish Bansal",
+      "phone": "+917459716009",
+      "email": "manish.80@example.com",
+      "preferred_language": "hinglish",
+      "segment": "HIGH_LTV",
+      "historical_payment_success_rate": 0.77
+    },
+    "metadata": {
+      "expected_category": "CHECKOUT_ABANDONMENT",
+      "last_contact_hours_ago": 1
+    }
+  },
+  {
+    "event_id": "evt_bench_0024",
+    "order_id": "order_rzp_313487",
+    "payment_id": "pay_1852264",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 3203.11,
+    "currency": "INR",
+    "payment_method": "netbanking",
+    "error_code": "SBI_NETBANKING_503",
+    "error_description": "Bank server returned HTTP 503 Service Unavailable",
+    "timestamp": "2026-08-22T18:07:05.219051",
+    "retry_count": 2,
+    "customer": {
+      "customer_id": "cust_0024",
+      "name": "Kunal Gupta",
+      "phone": "+917396418889",
+      "email": "kunal.91@example.com",
+      "preferred_language": "en",
+      "segment": "STANDARD",
+      "historical_payment_success_rate": 0.91
+    },
+    "metadata": {
+      "expected_category": "TRANSIENT_BANK_DOWNTIME",
+      "last_contact_hours_ago": 6
+    }
+  },
+  {
+    "event_id": "evt_bench_0025",
+    "order_id": "order_rzp_908577",
+    "payment_id": "pay_1162230",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 892.9,
+    "currency": "INR",
+    "payment_method": "card_debit",
+    "error_code": "SBI_NETBANKING_503",
+    "error_description": "Issuing bank gateway failed to acknowledge payment packet within 15s",
+    "timestamp": "2026-08-22T18:07:05.219097",
+    "retry_count": 0,
+    "customer": {
+      "customer_id": "cust_0025",
+      "name": "Kunal Gupta",
+      "phone": "+917480494664",
+      "email": "kunal.19@example.com",
+      "preferred_language": "hi",
+      "segment": "STANDARD",
+      "historical_payment_success_rate": 0.93
+    },
+    "metadata": {
+      "expected_category": "TRANSIENT_BANK_DOWNTIME",
+      "last_contact_hours_ago": 1
+    }
+  },
+  {
+    "event_id": "evt_bench_0026",
+    "order_id": "order_rzp_710805",
+    "payment_id": "pay_1669324",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 2642.98,
+    "currency": "INR",
+    "payment_method": "upi",
+    "error_code": "ICICI_UPI_DOWN",
+    "error_description": "Issuing bank gateway failed to acknowledge payment packet within 15s",
+    "timestamp": "2026-08-22T18:07:05.219149",
+    "retry_count": 1,
+    "customer": {
+      "customer_id": "cust_0026",
+      "name": "Neha Kulkarni",
+      "phone": "+918536778950",
+      "email": "neha.36@example.com",
+      "preferred_language": "hi",
+      "segment": "STANDARD",
+      "historical_payment_success_rate": 0.76
+    },
+    "metadata": {
+      "expected_category": "TRANSIENT_BANK_DOWNTIME",
+      "last_contact_hours_ago": 6
+    }
+  },
+  {
+    "event_id": "evt_bench_0027",
+    "order_id": "order_rzp_526117",
+    "payment_id": "pay_3970445",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 8290.67,
+    "currency": "INR",
+    "payment_method": "upi",
+    "error_code": "DAILY_LIMIT_EXCEEDED",
+    "error_description": "Payer account has insufficient balance to complete debit",
+    "timestamp": "2026-08-22T18:07:05.219202",
+    "retry_count": 3,
+    "customer": {
+      "customer_id": "cust_0027",
+      "name": "Ritu Agrawal",
+      "phone": "+918770791023",
+      "email": "ritu.13@example.com",
+      "preferred_language": "hinglish",
+      "segment": "HIGH_LTV",
+      "historical_payment_success_rate": 0.88
+    },
+    "metadata": {
+      "expected_category": "INSUFFICIENT_FUNDS",
+      "last_contact_hours_ago": 24
+    }
+  },
+  {
+    "event_id": "evt_bench_0028",
+    "order_id": "order_rzp_379766",
+    "payment_id": "pay_4731818",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 1772.74,
+    "currency": "INR",
+    "payment_method": "card_debit",
+    "error_code": "DAILY_LIMIT_EXCEEDED",
+    "error_description": "Payer account has insufficient balance to complete debit",
+    "timestamp": "2026-08-22T18:07:05.219252",
+    "retry_count": 1,
+    "customer": {
+      "customer_id": "cust_0028",
+      "name": "Pooja Nair",
+      "phone": "+917857158768",
+      "email": "pooja.68@example.com",
+      "preferred_language": "en",
+      "segment": "HIGH_LTV",
+      "historical_payment_success_rate": 0.78
+    },
+    "metadata": {
+      "expected_category": "INSUFFICIENT_FUNDS",
+      "last_contact_hours_ago": 12
+    }
+  },
+  {
+    "event_id": "evt_bench_0029",
+    "order_id": "order_rzp_792094",
+    "payment_id": "pay_9546409",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 1151.49,
+    "currency": "INR",
+    "payment_method": "upi",
+    "error_code": "SBI_NETBANKING_503",
+    "error_description": "NPCI switch under high congestion",
+    "timestamp": "2026-08-22T18:07:05.219320",
+    "retry_count": 0,
+    "customer": {
+      "customer_id": "cust_0029",
+      "name": "Aarav Sharma",
+      "phone": "+918716605598",
+      "email": "aarav.96@example.com",
+      "preferred_language": "hi",
+      "segment": "HIGH_LTV",
+      "historical_payment_success_rate": 0.78
+    },
+    "metadata": {
+      "expected_category": "TRANSIENT_BANK_DOWNTIME",
+      "last_contact_hours_ago": 6
+    }
+  },
+  {
+    "event_id": "evt_bench_0030",
+    "order_id": "order_rzp_287241",
+    "payment_id": "pay_6262632",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 2759.45,
+    "currency": "INR",
+    "payment_method": "upi",
+    "error_code": "SBI_NETBANKING_503",
+    "error_description": "Issuing bank gateway failed to acknowledge payment packet within 15s",
+    "timestamp": "2026-08-22T18:07:05.219374",
+    "retry_count": 0,
+    "customer": {
+      "customer_id": "cust_0030",
+      "name": "Rahul Joshi",
+      "phone": "+918874297457",
+      "email": "rahul.87@example.com",
+      "preferred_language": "hi",
+      "segment": "STANDARD",
+      "historical_payment_success_rate": 0.73
+    },
+    "metadata": {
+      "expected_category": "TRANSIENT_BANK_DOWNTIME",
+      "last_contact_hours_ago": 1
+    }
+  },
+  {
+    "event_id": "evt_bench_0031",
+    "order_id": "order_rzp_146542",
+    "payment_id": "pay_4305700",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 3291.46,
+    "currency": "INR",
+    "payment_method": "card_debit",
+    "error_code": "GATEWAY_TIMEOUT_HDFC",
+    "error_description": "Bank server returned HTTP 503 Service Unavailable",
+    "timestamp": "2026-08-22T18:07:05.219422",
+    "retry_count": 2,
+    "customer": {
+      "customer_id": "cust_0031",
+      "name": "Rahul Joshi",
+      "phone": "+918564319318",
+      "email": "rahul.65@example.com",
+      "preferred_language": "hinglish",
+      "segment": "MEDIUM_LTV",
+      "historical_payment_success_rate": 0.94
+    },
+    "metadata": {
+      "expected_category": "TRANSIENT_BANK_DOWNTIME",
+      "last_contact_hours_ago": 24
+    }
+  },
+  {
+    "event_id": "evt_bench_0032",
+    "order_id": "order_rzp_795612",
+    "payment_id": "pay_5960271",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 15885.71,
+    "currency": "INR",
+    "payment_method": "card_credit",
+    "error_code": "ABANDONED_CHECKOUT",
+    "error_description": "User closed browser tab during order review step",
+    "timestamp": "2026-08-22T18:07:05.219470",
+    "retry_count": 0,
+    "customer": {
+      "customer_id": "cust_0032",
+      "name": "Kunal Gupta",
+      "phone": "+919381183483",
+      "email": "kunal.26@example.com",
+      "preferred_language": "hinglish",
+      "segment": "MEDIUM_LTV",
+      "historical_payment_success_rate": 0.81
+    },
+    "metadata": {
+      "expected_category": "CHECKOUT_ABANDONMENT",
+      "last_contact_hours_ago": 48
+    }
+  },
+  {
+    "event_id": "evt_bench_0033",
+    "order_id": "order_rzp_745414",
+    "payment_id": "pay_6406444",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 1835.58,
+    "currency": "INR",
+    "payment_method": "upi_autopay",
+    "error_code": "AUTOPAY_REVOKED_USER",
+    "error_description": "UPI Autopay recurring mandate expired on billing anniversary",
+    "timestamp": "2026-08-22T18:07:05.219531",
+    "retry_count": 0,
+    "customer": {
+      "customer_id": "cust_0033",
+      "name": "Sneha Reddy",
+      "phone": "+918997109065",
+      "email": "sneha.66@example.com",
+      "preferred_language": "en",
+      "segment": "STANDARD",
+      "historical_payment_success_rate": 0.87
+    },
+    "metadata": {
+      "expected_category": "MANDATE_EXPIRED_OR_REVOKED",
+      "last_contact_hours_ago": 1
+    }
+  },
+  {
+    "event_id": "evt_bench_0034",
+    "order_id": "order_rzp_790855",
+    "payment_id": "pay_6207974",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 1931.84,
+    "currency": "INR",
+    "payment_method": "card_credit",
+    "error_code": "BAD_REQUEST_PAYMENT_TIMED_OUT",
+    "error_description": "3DS verification window timed out before customer entered password",
+    "timestamp": "2026-08-22T18:07:05.219582",
+    "retry_count": 1,
+    "customer": {
+      "customer_id": "cust_0034",
+      "name": "Sneha Reddy",
+      "phone": "+917964824319",
+      "email": "sneha.35@example.com",
+      "preferred_language": "hinglish",
+      "segment": "MEDIUM_LTV",
+      "historical_payment_success_rate": 0.71
+    },
+    "metadata": {
+      "expected_category": "AUTH_OR_OTP_TIMEOUT",
+      "last_contact_hours_ago": 12
+    }
+  },
+  {
+    "event_id": "evt_bench_0035",
+    "order_id": "order_rzp_991014",
+    "payment_id": "pay_7442089",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 9453.15,
+    "currency": "INR",
+    "payment_method": "netbanking",
+    "error_code": "AUTH_SESSION_TIMEOUT",
+    "error_description": "3DS verification window timed out before customer entered password",
+    "timestamp": "2026-08-22T18:07:05.219630",
+    "retry_count": 0,
+    "customer": {
+      "customer_id": "cust_0035",
+      "name": "Simran Kaur",
+      "phone": "+919123333781",
+      "email": "simran.61@example.com",
+      "preferred_language": "hinglish",
+      "segment": "STANDARD",
+      "historical_payment_success_rate": 0.74
+    },
+    "metadata": {
+      "expected_category": "AUTH_OR_OTP_TIMEOUT",
+      "last_contact_hours_ago": 6
+    }
+  },
+  {
+    "event_id": "evt_bench_0036",
+    "order_id": "order_rzp_916232",
+    "payment_id": "pay_3036059",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 78143.27,
+    "currency": "INR",
+    "payment_method": "b2b_invoice",
+    "error_code": "INVOICE_NET30_OVERDUE",
+    "error_description": "Accounts payable invoice awaiting corporate card / wire settlement",
+    "timestamp": "2026-08-22T18:07:05.219677",
+    "retry_count": 2,
+    "customer": {
+      "customer_id": "cust_0036",
+      "name": "Ananya Iyer",
+      "phone": "+918960488639",
+      "email": "ananya.27@example.com",
+      "preferred_language": "en",
+      "segment": "STANDARD",
+      "historical_payment_success_rate": 0.87
+    },
+    "metadata": {
+      "expected_category": "B2B_OVERDUE_INVOICE",
+      "last_contact_hours_ago": 1
+    }
+  },
+  {
+    "event_id": "evt_bench_0037",
+    "order_id": "order_rzp_891937",
+    "payment_id": "pay_8963715",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 16632.42,
+    "currency": "INR",
+    "payment_method": "card_credit",
+    "error_code": "ABANDONED_CHECKOUT",
+    "error_description": "User closed browser tab during order review step",
+    "timestamp": "2026-08-22T18:07:05.219727",
+    "retry_count": 0,
+    "customer": {
+      "customer_id": "cust_0037",
+      "name": "Kunal Gupta",
+      "phone": "+918933034905",
+      "email": "kunal.43@example.com",
+      "preferred_language": "hinglish",
+      "segment": "HIGH_LTV",
+      "historical_payment_success_rate": 0.91
+    },
+    "metadata": {
+      "expected_category": "CHECKOUT_ABANDONMENT",
+      "last_contact_hours_ago": 24
+    }
+  },
+  {
+    "event_id": "evt_bench_0038",
+    "order_id": "order_rzp_608136",
+    "payment_id": "pay_6634586",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 42604.91,
+    "currency": "INR",
+    "payment_method": "card_credit",
+    "error_code": "RISK_SENTINEL_BLOCKED",
+    "error_description": "Card issuing bank returned strict risk restriction",
+    "timestamp": "2026-08-22T18:07:05.219774",
+    "retry_count": 0,
+    "customer": {
+      "customer_id": "cust_0038",
+      "name": "Manish Bansal",
+      "phone": "+918373142116",
+      "email": "manish.79@example.com",
+      "preferred_language": "hinglish",
+      "segment": "MEDIUM_LTV",
+      "historical_payment_success_rate": 0.73
+    },
+    "metadata": {
+      "expected_category": "FRAUD_OR_CARD_BLOCKED",
+      "last_contact_hours_ago": 12
+    }
+  },
+  {
+    "event_id": "evt_bench_0039",
+    "order_id": "order_rzp_840734",
+    "payment_id": "pay_4470105",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 2210.84,
+    "currency": "INR",
+    "payment_method": "card_debit",
+    "error_code": "ACCOUNT_BALANCE_LOW",
+    "error_description": "Bank declined authorization due to daily UPI debit limit",
+    "timestamp": "2026-08-22T18:07:05.219821",
+    "retry_count": 0,
+    "customer": {
+      "customer_id": "cust_0039",
+      "name": "Vikram Singh",
+      "phone": "+918804502687",
+      "email": "vikram.59@example.com",
+      "preferred_language": "hi",
+      "segment": "STANDARD",
+      "historical_payment_success_rate": 0.94
+    },
+    "metadata": {
+      "expected_category": "INSUFFICIENT_FUNDS",
+      "last_contact_hours_ago": 6
+    }
+  },
+  {
+    "event_id": "evt_bench_0040",
+    "order_id": "order_rzp_498858",
+    "payment_id": "pay_8030010",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 84622.47,
+    "currency": "INR",
+    "payment_method": "b2b_invoice",
+    "error_code": "ENTERPRISE_TERMS_EXCEEDED",
+    "error_description": "Accounts payable invoice awaiting corporate card / wire settlement",
+    "timestamp": "2026-08-22T18:07:05.219870",
+    "retry_count": 2,
+    "customer": {
+      "customer_id": "cust_0040",
+      "name": "Nikhil Pillai",
+      "phone": "+919311639723",
+      "email": "nikhil.79@example.com",
+      "preferred_language": "hi",
+      "segment": "HIGH_LTV",
+      "historical_payment_success_rate": 0.92
+    },
+    "metadata": {
+      "expected_category": "B2B_OVERDUE_INVOICE",
+      "last_contact_hours_ago": 48
+    }
+  },
+  {
+    "event_id": "evt_bench_0041",
+    "order_id": "order_rzp_557007",
+    "payment_id": "pay_3768991",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 2365.41,
+    "currency": "INR",
+    "payment_method": "card_debit",
+    "error_code": "ICICI_UPI_DOWN",
+    "error_description": "NPCI switch under high congestion",
+    "timestamp": "2026-08-22T18:07:05.219918",
+    "retry_count": 0,
+    "customer": {
+      "customer_id": "cust_0041",
+      "name": "Rahul Joshi",
+      "phone": "+919007425404",
+      "email": "rahul.26@example.com",
+      "preferred_language": "hi",
+      "segment": "MEDIUM_LTV",
+      "historical_payment_success_rate": 0.83
+    },
+    "metadata": {
+      "expected_category": "TRANSIENT_BANK_DOWNTIME",
+      "last_contact_hours_ago": 48
+    }
+  },
+  {
+    "event_id": "evt_bench_0042",
+    "order_id": "order_rzp_795205",
+    "payment_id": "pay_5364698",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 1765.18,
+    "currency": "INR",
+    "payment_method": "upi",
+    "error_code": "ABANDONED_CHECKOUT",
+    "error_description": "User closed browser tab during order review step",
+    "timestamp": "2026-08-22T18:07:05.219988",
+    "retry_count": 0,
+    "customer": {
+      "customer_id": "cust_0042",
+      "name": "Nikhil Pillai",
+      "phone": "+918628238707",
+      "email": "nikhil.51@example.com",
+      "preferred_language": "hinglish",
+      "segment": "HIGH_LTV",
+      "historical_payment_success_rate": 0.81
+    },
+    "metadata": {
+      "expected_category": "CHECKOUT_ABANDONMENT",
+      "last_contact_hours_ago": 24
+    }
+  },
+  {
+    "event_id": "evt_bench_0043",
+    "order_id": "order_rzp_391773",
+    "payment_id": "pay_1873851",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 119001.23,
+    "currency": "INR",
+    "payment_method": "b2b_invoice",
+    "error_code": "ENTERPRISE_TERMS_EXCEEDED",
+    "error_description": "Accounts payable invoice awaiting corporate card / wire settlement",
+    "timestamp": "2026-08-22T18:07:05.220037",
+    "retry_count": 0,
+    "customer": {
+      "customer_id": "cust_0043",
+      "name": "Siddharth Rao",
+      "phone": "+918503068227",
+      "email": "siddharth.38@example.com",
+      "preferred_language": "hi",
+      "segment": "STANDARD",
+      "historical_payment_success_rate": 0.72
+    },
+    "metadata": {
+      "expected_category": "B2B_OVERDUE_INVOICE",
+      "last_contact_hours_ago": 6
+    }
+  },
+  {
+    "event_id": "evt_bench_0044",
+    "order_id": "order_rzp_359295",
+    "payment_id": "pay_4656838",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 49920.09,
+    "currency": "INR",
+    "payment_method": "b2b_invoice",
+    "error_code": "INVOICE_NET30_OVERDUE",
+    "error_description": "Net-30 B2B vendor invoice passed due date by 7 days",
+    "timestamp": "2026-08-22T18:07:05.220082",
+    "retry_count": 0,
+    "customer": {
+      "customer_id": "cust_0044",
+      "name": "Aarav Sharma",
+      "phone": "+918997305752",
+      "email": "aarav.99@example.com",
+      "preferred_language": "en",
+      "segment": "STANDARD",
+      "historical_payment_success_rate": 0.89
+    },
+    "metadata": {
+      "expected_category": "B2B_OVERDUE_INVOICE",
+      "last_contact_hours_ago": 12
+    }
+  },
+  {
+    "event_id": "evt_bench_0045",
+    "order_id": "order_rzp_884256",
+    "payment_id": "pay_7296605",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 13655.46,
+    "currency": "INR",
+    "payment_method": "upi",
+    "error_code": "CART_DROP_OFF_HIGH_INTENT",
+    "error_description": "User closed browser tab during order review step",
+    "timestamp": "2026-08-22T18:07:05.220129",
+    "retry_count": 2,
+    "customer": {
+      "customer_id": "cust_0045",
+      "name": "Simran Kaur",
+      "phone": "+918703617827",
+      "email": "simran.35@example.com",
+      "preferred_language": "hinglish",
+      "segment": "STANDARD",
+      "historical_payment_success_rate": 0.85
+    },
+    "metadata": {
+      "expected_category": "CHECKOUT_ABANDONMENT",
+      "last_contact_hours_ago": 12
+    }
+  },
+  {
+    "event_id": "evt_bench_0046",
+    "order_id": "order_rzp_991597",
+    "payment_id": "pay_7217147",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 3189.68,
+    "currency": "INR",
+    "payment_method": "upi",
+    "error_code": "GATEWAY_TIMEOUT_HDFC",
+    "error_description": "Bank server returned HTTP 503 Service Unavailable",
+    "timestamp": "2026-08-22T18:07:05.220181",
+    "retry_count": 0,
+    "customer": {
+      "customer_id": "cust_0046",
+      "name": "Divya Deshmukh",
+      "phone": "+917296166921",
+      "email": "divya.74@example.com",
+      "preferred_language": "hi",
+      "segment": "STANDARD",
+      "historical_payment_success_rate": 0.79
+    },
+    "metadata": {
+      "expected_category": "TRANSIENT_BANK_DOWNTIME",
+      "last_contact_hours_ago": 48
+    }
+  },
+  {
+    "event_id": "evt_bench_0047",
+    "order_id": "order_rzp_554582",
+    "payment_id": "pay_9753457",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 11568.62,
+    "currency": "INR",
+    "payment_method": "netbanking",
+    "error_code": "BAD_REQUEST_PAYMENT_TIMED_OUT",
+    "error_description": "3DS verification window timed out before customer entered password",
+    "timestamp": "2026-08-22T18:07:05.220227",
+    "retry_count": 0,
+    "customer": {
+      "customer_id": "cust_0047",
+      "name": "Ananya Iyer",
+      "phone": "+919793693337",
+      "email": "ananya.44@example.com",
+      "preferred_language": "hi",
+      "segment": "STANDARD",
+      "historical_payment_success_rate": 0.9
+    },
+    "metadata": {
+      "expected_category": "AUTH_OR_OTP_TIMEOUT",
+      "last_contact_hours_ago": 1
+    }
+  },
+  {
+    "event_id": "evt_bench_0048",
+    "order_id": "order_rzp_587455",
+    "payment_id": "pay_2453962",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 31134.47,
+    "currency": "INR",
+    "payment_method": "card_credit",
+    "error_code": "STOLEN_CARD_DECLINE",
+    "error_description": "Card issuing bank returned strict risk restriction",
+    "timestamp": "2026-08-22T18:07:05.220269",
+    "retry_count": 1,
+    "customer": {
+      "customer_id": "cust_0048",
+      "name": "Tanvi Choudhury",
+      "phone": "+918197987692",
+      "email": "tanvi.67@example.com",
+      "preferred_language": "hinglish",
+      "segment": "HIGH_LTV",
+      "historical_payment_success_rate": 0.89
+    },
+    "metadata": {
+      "expected_category": "FRAUD_OR_CARD_BLOCKED",
+      "last_contact_hours_ago": 1
+    }
+  },
+  {
+    "event_id": "evt_bench_0049",
+    "order_id": "order_rzp_452737",
+    "payment_id": "pay_6709938",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 1792.67,
+    "currency": "INR",
+    "payment_method": "card_credit",
+    "error_code": "EXIT_CHECKOUT_STEP_2",
+    "error_description": "User exited Razorpay Standard Checkout after selecting payment method",
+    "timestamp": "2026-08-22T18:07:05.220307",
+    "retry_count": 1,
+    "customer": {
+      "customer_id": "cust_0049",
+      "name": "Siddharth Rao",
+      "phone": "+918201124041",
+      "email": "siddharth.86@example.com",
+      "preferred_language": "hi",
+      "segment": "STANDARD",
+      "historical_payment_success_rate": 0.92
+    },
+    "metadata": {
+      "expected_category": "CHECKOUT_ABANDONMENT",
+      "last_contact_hours_ago": 1
+    }
+  },
+  {
+    "event_id": "evt_bench_0050",
+    "order_id": "order_rzp_300337",
+    "payment_id": "pay_9234615",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 705.29,
+    "currency": "INR",
+    "payment_method": "card_debit",
+    "error_code": "ICICI_UPI_DOWN",
+    "error_description": "NPCI switch under high congestion",
+    "timestamp": "2026-08-22T18:07:05.220347",
+    "retry_count": 0,
+    "customer": {
+      "customer_id": "cust_0050",
+      "name": "Manish Bansal",
+      "phone": "+918924895021",
+      "email": "manish.12@example.com",
+      "preferred_language": "hinglish",
+      "segment": "MEDIUM_LTV",
+      "historical_payment_success_rate": 0.77
+    },
+    "metadata": {
+      "expected_category": "TRANSIENT_BANK_DOWNTIME",
+      "last_contact_hours_ago": 48
+    }
+  },
+  {
+    "event_id": "evt_bench_0051",
+    "order_id": "order_rzp_421080",
+    "payment_id": "pay_6549757",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 2091.69,
+    "currency": "INR",
+    "payment_method": "upi_autopay",
+    "error_code": "AUTOPAY_REVOKED_USER",
+    "error_description": "Customer revoked automated mandate on PSP app",
+    "timestamp": "2026-08-22T18:07:05.220388",
+    "retry_count": 0,
+    "customer": {
+      "customer_id": "cust_0051",
+      "name": "Pooja Nair",
+      "phone": "+918511014697",
+      "email": "pooja.99@example.com",
+      "preferred_language": "en",
+      "segment": "STANDARD",
+      "historical_payment_success_rate": 0.77
+    },
+    "metadata": {
+      "expected_category": "MANDATE_EXPIRED_OR_REVOKED",
+      "last_contact_hours_ago": 24
+    }
+  },
+  {
+    "event_id": "evt_bench_0052",
+    "order_id": "order_rzp_856321",
+    "payment_id": "pay_4213524",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 1149.22,
+    "currency": "INR",
+    "payment_method": "card_debit",
+    "error_code": "GATEWAY_TIMEOUT_HDFC",
+    "error_description": "Bank server returned HTTP 503 Service Unavailable",
+    "timestamp": "2026-08-22T18:07:05.220433",
+    "retry_count": 0,
+    "customer": {
+      "customer_id": "cust_0052",
+      "name": "Ananya Iyer",
+      "phone": "+917929364954",
+      "email": "ananya.71@example.com",
+      "preferred_language": "en",
+      "segment": "HIGH_LTV",
+      "historical_payment_success_rate": 0.88
+    },
+    "metadata": {
+      "expected_category": "TRANSIENT_BANK_DOWNTIME",
+      "last_contact_hours_ago": 1
+    }
+  },
+  {
+    "event_id": "evt_bench_0053",
+    "order_id": "order_rzp_205409",
+    "payment_id": "pay_9961299",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 15621.04,
+    "currency": "INR",
+    "payment_method": "card_credit",
+    "error_code": "EXIT_CHECKOUT_STEP_2",
+    "error_description": "User exited Razorpay Standard Checkout after selecting payment method",
+    "timestamp": "2026-08-22T18:07:05.220472",
+    "retry_count": 0,
+    "customer": {
+      "customer_id": "cust_0053",
+      "name": "Divya Deshmukh",
+      "phone": "+917543669676",
+      "email": "divya.45@example.com",
+      "preferred_language": "hinglish",
+      "segment": "STANDARD",
+      "historical_payment_success_rate": 0.94
+    },
+    "metadata": {
+      "expected_category": "CHECKOUT_ABANDONMENT",
+      "last_contact_hours_ago": 1
+    }
+  },
+  {
+    "event_id": "evt_bench_0054",
+    "order_id": "order_rzp_768854",
+    "payment_id": "pay_8389840",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 7447.56,
+    "currency": "INR",
+    "payment_method": "upi",
+    "error_code": "ACCOUNT_BALANCE_LOW",
+    "error_description": "Payer account has insufficient balance to complete debit",
+    "timestamp": "2026-08-22T18:07:05.220515",
+    "retry_count": 0,
+    "customer": {
+      "customer_id": "cust_0054",
+      "name": "Vikram Singh",
+      "phone": "+918463320861",
+      "email": "vikram.33@example.com",
+      "preferred_language": "hinglish",
+      "segment": "STANDARD",
+      "historical_payment_success_rate": 0.76
+    },
+    "metadata": {
+      "expected_category": "INSUFFICIENT_FUNDS",
+      "last_contact_hours_ago": 48
+    }
+  },
+  {
+    "event_id": "evt_bench_0055",
+    "order_id": "order_rzp_520172",
+    "payment_id": "pay_2429098",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 2390.75,
+    "currency": "INR",
+    "payment_method": "upi",
+    "error_code": "GATEWAY_TIMEOUT_HDFC",
+    "error_description": "Issuing bank gateway failed to acknowledge payment packet within 15s",
+    "timestamp": "2026-08-22T18:07:05.220555",
+    "retry_count": 2,
+    "customer": {
+      "customer_id": "cust_0055",
+      "name": "Rohan Mehta",
+      "phone": "+918065972034",
+      "email": "rohan.25@example.com",
+      "preferred_language": "hi",
+      "segment": "MEDIUM_LTV",
+      "historical_payment_success_rate": 0.89
+    },
+    "metadata": {
+      "expected_category": "TRANSIENT_BANK_DOWNTIME",
+      "last_contact_hours_ago": 1
+    }
+  },
+  {
+    "event_id": "evt_bench_0056",
+    "order_id": "order_rzp_336650",
+    "payment_id": "pay_8194570",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 14641.7,
+    "currency": "INR",
+    "payment_method": "card_credit",
+    "error_code": "EXIT_CHECKOUT_STEP_2",
+    "error_description": "User closed browser tab during order review step",
+    "timestamp": "2026-08-22T18:07:05.220596",
+    "retry_count": 0,
+    "customer": {
+      "customer_id": "cust_0056",
+      "name": "Simran Kaur",
+      "phone": "+918311598149",
+      "email": "simran.82@example.com",
+      "preferred_language": "hi",
+      "segment": "STANDARD",
+      "historical_payment_success_rate": 0.72
+    },
+    "metadata": {
+      "expected_category": "CHECKOUT_ABANDONMENT",
+      "last_contact_hours_ago": 6
+    }
+  },
+  {
+    "event_id": "evt_bench_0057",
+    "order_id": "order_rzp_755900",
+    "payment_id": "pay_3626181",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 51378.15,
+    "currency": "INR",
+    "payment_method": "b2b_invoice",
+    "error_code": "DUE_DATE_PASSED_B2B",
+    "error_description": "Net-30 B2B vendor invoice passed due date by 7 days",
+    "timestamp": "2026-08-22T18:07:05.220642",
+    "retry_count": 0,
+    "customer": {
+      "customer_id": "cust_0057",
+      "name": "Aditya Verma",
+      "phone": "+917011492154",
+      "email": "aditya.62@example.com",
+      "preferred_language": "en",
+      "segment": "STANDARD",
+      "historical_payment_success_rate": 0.87
+    },
+    "metadata": {
+      "expected_category": "B2B_OVERDUE_INVOICE",
+      "last_contact_hours_ago": 48
+    }
+  },
+  {
+    "event_id": "evt_bench_0058",
+    "order_id": "order_rzp_342720",
+    "payment_id": "pay_4318855",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 2804.13,
+    "currency": "INR",
+    "payment_method": "upi",
+    "error_code": "ACCOUNT_BALANCE_LOW",
+    "error_description": "Bank declined authorization due to daily UPI debit limit",
+    "timestamp": "2026-08-22T18:07:05.220718",
+    "retry_count": 2,
+    "customer": {
+      "customer_id": "cust_0058",
+      "name": "Priya Patel",
+      "phone": "+918825957977",
+      "email": "priya.24@example.com",
+      "preferred_language": "hi",
+      "segment": "MEDIUM_LTV",
+      "historical_payment_success_rate": 0.76
+    },
+    "metadata": {
+      "expected_category": "INSUFFICIENT_FUNDS",
+      "last_contact_hours_ago": 12
+    }
+  },
+  {
+    "event_id": "evt_bench_0059",
+    "order_id": "order_rzp_174878",
+    "payment_id": "pay_7752972",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 976.16,
+    "currency": "INR",
+    "payment_method": "card_debit",
+    "error_code": "ACCOUNT_BALANCE_LOW",
+    "error_description": "Bank declined authorization due to daily UPI debit limit",
+    "timestamp": "2026-08-22T18:07:05.220770",
+    "retry_count": 0,
+    "customer": {
+      "customer_id": "cust_0059",
+      "name": "Vikram Singh",
+      "phone": "+918169288485",
+      "email": "vikram.74@example.com",
+      "preferred_language": "hi",
+      "segment": "STANDARD",
+      "historical_payment_success_rate": 0.82
+    },
+    "metadata": {
+      "expected_category": "INSUFFICIENT_FUNDS",
+      "last_contact_hours_ago": 6
+    }
+  },
+  {
+    "event_id": "evt_bench_0060",
+    "order_id": "order_rzp_553014",
+    "payment_id": "pay_1348050",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 13933.72,
+    "currency": "INR",
+    "payment_method": "upi",
+    "error_code": "ABANDONED_CHECKOUT",
+    "error_description": "User closed browser tab during order review step",
+    "timestamp": "2026-08-22T18:07:05.220814",
+    "retry_count": 2,
+    "customer": {
+      "customer_id": "cust_0060",
+      "name": "Priya Patel",
+      "phone": "+919887427412",
+      "email": "priya.44@example.com",
+      "preferred_language": "hi",
+      "segment": "STANDARD",
+      "historical_payment_success_rate": 0.71
+    },
+    "metadata": {
+      "expected_category": "CHECKOUT_ABANDONMENT",
+      "last_contact_hours_ago": 12
+    }
+  },
+  {
+    "event_id": "evt_bench_0061",
+    "order_id": "order_rzp_783157",
+    "payment_id": "pay_2530793",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 5863.97,
+    "currency": "INR",
+    "payment_method": "netbanking",
+    "error_code": "AUTH_SESSION_TIMEOUT",
+    "error_description": "Customer did not enter 2FA SMS OTP within 180 seconds",
+    "timestamp": "2026-08-22T18:07:05.220861",
+    "retry_count": 1,
+    "customer": {
+      "customer_id": "cust_0061",
+      "name": "Manish Bansal",
+      "phone": "+919018679284",
+      "email": "manish.54@example.com",
+      "preferred_language": "en",
+      "segment": "STANDARD",
+      "historical_payment_success_rate": 0.78
+    },
+    "metadata": {
+      "expected_category": "AUTH_OR_OTP_TIMEOUT",
+      "last_contact_hours_ago": 6
+    }
+  },
+  {
+    "event_id": "evt_bench_0062",
+    "order_id": "order_rzp_531641",
+    "payment_id": "pay_8630712",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 3228.75,
+    "currency": "INR",
+    "payment_method": "netbanking",
+    "error_code": "SBI_NETBANKING_503",
+    "error_description": "Bank server returned HTTP 503 Service Unavailable",
+    "timestamp": "2026-08-22T18:07:05.220904",
+    "retry_count": 0,
+    "customer": {
+      "customer_id": "cust_0062",
+      "name": "Kunal Gupta",
+      "phone": "+917378213925",
+      "email": "kunal.50@example.com",
+      "preferred_language": "en",
+      "segment": "MEDIUM_LTV",
+      "historical_payment_success_rate": 0.78
+    },
+    "metadata": {
+      "expected_category": "TRANSIENT_BANK_DOWNTIME",
+      "last_contact_hours_ago": 48
+    }
+  },
+  {
+    "event_id": "evt_bench_0063",
+    "order_id": "order_rzp_789606",
+    "payment_id": "pay_9363326",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 10562.91,
+    "currency": "INR",
+    "payment_method": "card_credit",
+    "error_code": "AUTH_SESSION_TIMEOUT",
+    "error_description": "3DS verification window timed out before customer entered password",
+    "timestamp": "2026-08-22T18:07:05.220950",
+    "retry_count": 0,
+    "customer": {
+      "customer_id": "cust_0063",
+      "name": "Aarav Sharma",
+      "phone": "+919686110098",
+      "email": "aarav.66@example.com",
+      "preferred_language": "hinglish",
+      "segment": "STANDARD",
+      "historical_payment_success_rate": 0.75
+    },
+    "metadata": {
+      "expected_category": "AUTH_OR_OTP_TIMEOUT",
+      "last_contact_hours_ago": 1
+    }
+  },
+  {
+    "event_id": "evt_bench_0064",
+    "order_id": "order_rzp_559398",
+    "payment_id": "pay_5014745",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 4005.51,
+    "currency": "INR",
+    "payment_method": "upi",
+    "error_code": "ICICI_UPI_DOWN",
+    "error_description": "Issuing bank gateway failed to acknowledge payment packet within 15s",
+    "timestamp": "2026-08-22T18:07:05.220991",
+    "retry_count": 0,
+    "customer": {
+      "customer_id": "cust_0064",
+      "name": "Divya Deshmukh",
+      "phone": "+917680229045",
+      "email": "divya.49@example.com",
+      "preferred_language": "hi",
+      "segment": "HIGH_LTV",
+      "historical_payment_success_rate": 0.7
+    },
+    "metadata": {
+      "expected_category": "TRANSIENT_BANK_DOWNTIME",
+      "last_contact_hours_ago": 48
+    }
+  },
+  {
+    "event_id": "evt_bench_0065",
+    "order_id": "order_rzp_982277",
+    "payment_id": "pay_5896624",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 4138.66,
+    "currency": "INR",
+    "payment_method": "card_debit",
+    "error_code": "ICICI_UPI_DOWN",
+    "error_description": "Issuing bank gateway failed to acknowledge payment packet within 15s",
+    "timestamp": "2026-08-22T18:07:05.221032",
+    "retry_count": 0,
+    "customer": {
+      "customer_id": "cust_0065",
+      "name": "Pooja Nair",
+      "phone": "+919185588660",
+      "email": "pooja.44@example.com",
+      "preferred_language": "en",
+      "segment": "MEDIUM_LTV",
+      "historical_payment_success_rate": 0.91
+    },
+    "metadata": {
+      "expected_category": "TRANSIENT_BANK_DOWNTIME",
+      "last_contact_hours_ago": 48
+    }
+  },
+  {
+    "event_id": "evt_bench_0066",
+    "order_id": "order_rzp_678043",
+    "payment_id": "pay_7961578",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 1656.28,
+    "currency": "INR",
+    "payment_method": "upi",
+    "error_code": "INSUFFICIENT_FUNDS_SBI",
+    "error_description": "Payer account has insufficient balance to complete debit",
+    "timestamp": "2026-08-22T18:07:05.221077",
+    "retry_count": 1,
+    "customer": {
+      "customer_id": "cust_0066",
+      "name": "Amitav Sen",
+      "phone": "+918459753033",
+      "email": "amitav.74@example.com",
+      "preferred_language": "en",
+      "segment": "STANDARD",
+      "historical_payment_success_rate": 0.91
+    },
+    "metadata": {
+      "expected_category": "INSUFFICIENT_FUNDS",
+      "last_contact_hours_ago": 24
+    }
+  },
+  {
+    "event_id": "evt_bench_0067",
+    "order_id": "order_rzp_978157",
+    "payment_id": "pay_6577416",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 1883.73,
+    "currency": "INR",
+    "payment_method": "upi_autopay",
+    "error_code": "MANDATE_LIMIT_BREACHED",
+    "error_description": "Customer revoked automated mandate on PSP app",
+    "timestamp": "2026-08-22T18:07:05.221117",
+    "retry_count": 0,
+    "customer": {
+      "customer_id": "cust_0067",
+      "name": "Divya Deshmukh",
+      "phone": "+919370467256",
+      "email": "divya.79@example.com",
+      "preferred_language": "en",
+      "segment": "STANDARD",
+      "historical_payment_success_rate": 0.81
+    },
+    "metadata": {
+      "expected_category": "MANDATE_EXPIRED_OR_REVOKED",
+      "last_contact_hours_ago": 24
+    }
+  },
+  {
+    "event_id": "evt_bench_0068",
+    "order_id": "order_rzp_699573",
+    "payment_id": "pay_7395997",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 1939.33,
+    "currency": "INR",
+    "payment_method": "netbanking",
+    "error_code": "ICICI_UPI_DOWN",
+    "error_description": "Issuing bank gateway failed to acknowledge payment packet within 15s",
+    "timestamp": "2026-08-22T18:07:05.221154",
+    "retry_count": 0,
+    "customer": {
+      "customer_id": "cust_0068",
+      "name": "Pooja Nair",
+      "phone": "+918658195603",
+      "email": "pooja.94@example.com",
+      "preferred_language": "hi",
+      "segment": "MEDIUM_LTV",
+      "historical_payment_success_rate": 0.95
+    },
+    "metadata": {
+      "expected_category": "TRANSIENT_BANK_DOWNTIME",
+      "last_contact_hours_ago": 48
+    }
+  },
+  {
+    "event_id": "evt_bench_0069",
+    "order_id": "order_rzp_626690",
+    "payment_id": "pay_1257489",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 4356.22,
+    "currency": "INR",
+    "payment_method": "netbanking",
+    "error_code": "SBI_NETBANKING_503",
+    "error_description": "Issuing bank gateway failed to acknowledge payment packet within 15s",
+    "timestamp": "2026-08-22T18:07:05.221194",
+    "retry_count": 2,
+    "customer": {
+      "customer_id": "cust_0069",
+      "name": "Vikram Singh",
+      "phone": "+917619142798",
+      "email": "vikram.62@example.com",
+      "preferred_language": "hi",
+      "segment": "STANDARD",
+      "historical_payment_success_rate": 0.94
+    },
+    "metadata": {
+      "expected_category": "TRANSIENT_BANK_DOWNTIME",
+      "last_contact_hours_ago": 6
+    }
+  },
+  {
+    "event_id": "evt_bench_0070",
+    "order_id": "order_rzp_455007",
+    "payment_id": "pay_7375499",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 7855.48,
+    "currency": "INR",
+    "payment_method": "card_debit",
+    "error_code": "AUTH_SESSION_TIMEOUT",
+    "error_description": "Customer did not enter 2FA SMS OTP within 180 seconds",
+    "timestamp": "2026-08-22T18:07:05.221229",
+    "retry_count": 1,
+    "customer": {
+      "customer_id": "cust_0070",
+      "name": "Rahul Joshi",
+      "phone": "+918360049298",
+      "email": "rahul.90@example.com",
+      "preferred_language": "hi",
+      "segment": "HIGH_LTV",
+      "historical_payment_success_rate": 0.92
+    },
+    "metadata": {
+      "expected_category": "AUTH_OR_OTP_TIMEOUT",
+      "last_contact_hours_ago": 48
+    }
+  },
+  {
+    "event_id": "evt_bench_0071",
+    "order_id": "order_rzp_747453",
+    "payment_id": "pay_2651601",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 1751.7,
+    "currency": "INR",
+    "payment_method": "card_credit",
+    "error_code": "BAD_REQUEST_PAYMENT_TIMED_OUT",
+    "error_description": "3DS verification window timed out before customer entered password",
+    "timestamp": "2026-08-22T18:07:05.221268",
+    "retry_count": 0,
+    "customer": {
+      "customer_id": "cust_0071",
+      "name": "Priya Patel",
+      "phone": "+919721926191",
+      "email": "priya.22@example.com",
+      "preferred_language": "en",
+      "segment": "MEDIUM_LTV",
+      "historical_payment_success_rate": 0.74
+    },
+    "metadata": {
+      "expected_category": "AUTH_OR_OTP_TIMEOUT",
+      "last_contact_hours_ago": 24
+    }
+  },
+  {
+    "event_id": "evt_bench_0072",
+    "order_id": "order_rzp_440131",
+    "payment_id": "pay_7913081",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 3654.0,
+    "currency": "INR",
+    "payment_method": "netbanking",
+    "error_code": "SBI_NETBANKING_503",
+    "error_description": "NPCI switch under high congestion",
+    "timestamp": "2026-08-22T18:07:05.221315",
+    "retry_count": 0,
+    "customer": {
+      "customer_id": "cust_0072",
+      "name": "Priya Patel",
+      "phone": "+919430642523",
+      "email": "priya.97@example.com",
+      "preferred_language": "hinglish",
+      "segment": "STANDARD",
+      "historical_payment_success_rate": 0.74
+    },
+    "metadata": {
+      "expected_category": "TRANSIENT_BANK_DOWNTIME",
+      "last_contact_hours_ago": 6
+    }
+  },
+  {
+    "event_id": "evt_bench_0073",
+    "order_id": "order_rzp_749813",
+    "payment_id": "pay_5283671",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 13049.6,
+    "currency": "INR",
+    "payment_method": "upi",
+    "error_code": "EXIT_CHECKOUT_STEP_2",
+    "error_description": "User exited Razorpay Standard Checkout after selecting payment method",
+    "timestamp": "2026-08-22T18:07:05.221360",
+    "retry_count": 0,
+    "customer": {
+      "customer_id": "cust_0073",
+      "name": "Siddharth Rao",
+      "phone": "+919864059081",
+      "email": "siddharth.11@example.com",
+      "preferred_language": "en",
+      "segment": "STANDARD",
+      "historical_payment_success_rate": 0.93
+    },
+    "metadata": {
+      "expected_category": "CHECKOUT_ABANDONMENT",
+      "last_contact_hours_ago": 1
+    }
+  },
+  {
+    "event_id": "evt_bench_0074",
+    "order_id": "order_rzp_563187",
+    "payment_id": "pay_6068760",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 4272.73,
+    "currency": "INR",
+    "payment_method": "netbanking",
+    "error_code": "SBI_NETBANKING_503",
+    "error_description": "Bank server returned HTTP 503 Service Unavailable",
+    "timestamp": "2026-08-22T18:07:05.221401",
+    "retry_count": 0,
+    "customer": {
+      "customer_id": "cust_0074",
+      "name": "Rohan Mehta",
+      "phone": "+917855630484",
+      "email": "rohan.59@example.com",
+      "preferred_language": "en",
+      "segment": "MEDIUM_LTV",
+      "historical_payment_success_rate": 0.73
+    },
+    "metadata": {
+      "expected_category": "TRANSIENT_BANK_DOWNTIME",
+      "last_contact_hours_ago": 48
+    }
+  },
+  {
+    "event_id": "evt_bench_0075",
+    "order_id": "order_rzp_702733",
+    "payment_id": "pay_5605016",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 6388.3,
+    "currency": "INR",
+    "payment_method": "upi",
+    "error_code": "ABANDONED_CHECKOUT",
+    "error_description": "User closed browser tab during order review step",
+    "timestamp": "2026-08-22T18:07:05.221450",
+    "retry_count": 0,
+    "customer": {
+      "customer_id": "cust_0075",
+      "name": "Neha Kulkarni",
+      "phone": "+917034780500",
+      "email": "neha.82@example.com",
+      "preferred_language": "hi",
+      "segment": "HIGH_LTV",
+      "historical_payment_success_rate": 0.89
+    },
+    "metadata": {
+      "expected_category": "CHECKOUT_ABANDONMENT",
+      "last_contact_hours_ago": 6
+    }
+  },
+  {
+    "event_id": "evt_bench_0076",
+    "order_id": "order_rzp_973294",
+    "payment_id": "pay_5204819",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 16851.38,
+    "currency": "INR",
+    "payment_method": "card_credit",
+    "error_code": "EXIT_CHECKOUT_STEP_2",
+    "error_description": "User exited Razorpay Standard Checkout after selecting payment method",
+    "timestamp": "2026-08-22T18:07:05.221492",
+    "retry_count": 0,
+    "customer": {
+      "customer_id": "cust_0076",
+      "name": "Tanvi Choudhury",
+      "phone": "+919910976189",
+      "email": "tanvi.94@example.com",
+      "preferred_language": "hi",
+      "segment": "STANDARD",
+      "historical_payment_success_rate": 0.91
+    },
+    "metadata": {
+      "expected_category": "CHECKOUT_ABANDONMENT",
+      "last_contact_hours_ago": 6
+    }
+  },
+  {
+    "event_id": "evt_bench_0077",
+    "order_id": "order_rzp_423939",
+    "payment_id": "pay_7970985",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 14863.89,
+    "currency": "INR",
+    "payment_method": "upi",
+    "error_code": "CART_DROP_OFF_HIGH_INTENT",
+    "error_description": "User closed browser tab during order review step",
+    "timestamp": "2026-08-22T18:07:05.221540",
+    "retry_count": 0,
+    "customer": {
+      "customer_id": "cust_0077",
+      "name": "Priya Patel",
+      "phone": "+917754368373",
+      "email": "priya.35@example.com",
+      "preferred_language": "hinglish",
+      "segment": "STANDARD",
+      "historical_payment_success_rate": 0.9
+    },
+    "metadata": {
+      "expected_category": "CHECKOUT_ABANDONMENT",
+      "last_contact_hours_ago": 24
+    }
+  },
+  {
+    "event_id": "evt_bench_0078",
+    "order_id": "order_rzp_385765",
+    "payment_id": "pay_2932227",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 10135.03,
+    "currency": "INR",
+    "payment_method": "card_debit",
+    "error_code": "AUTH_SESSION_TIMEOUT",
+    "error_description": "3DS verification window timed out before customer entered password",
+    "timestamp": "2026-08-22T18:07:05.221586",
+    "retry_count": 0,
+    "customer": {
+      "customer_id": "cust_0078",
+      "name": "Manish Bansal",
+      "phone": "+919011467975",
+      "email": "manish.19@example.com",
+      "preferred_language": "hinglish",
+      "segment": "MEDIUM_LTV",
+      "historical_payment_success_rate": 0.89
+    },
+    "metadata": {
+      "expected_category": "AUTH_OR_OTP_TIMEOUT",
+      "last_contact_hours_ago": 12
+    }
+  },
+  {
+    "event_id": "evt_bench_0079",
+    "order_id": "order_rzp_986827",
+    "payment_id": "pay_8630043",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 2471.39,
+    "currency": "INR",
+    "payment_method": "upi_autopay",
+    "error_code": "AUTOPAY_REVOKED_USER",
+    "error_description": "UPI Autopay recurring mandate expired on billing anniversary",
+    "timestamp": "2026-08-22T18:07:05.221629",
+    "retry_count": 0,
+    "customer": {
+      "customer_id": "cust_0079",
+      "name": "Siddharth Rao",
+      "phone": "+918583063357",
+      "email": "siddharth.96@example.com",
+      "preferred_language": "hi",
+      "segment": "STANDARD",
+      "historical_payment_success_rate": 0.87
+    },
+    "metadata": {
+      "expected_category": "MANDATE_EXPIRED_OR_REVOKED",
+      "last_contact_hours_ago": 1
+    }
+  },
+  {
+    "event_id": "evt_bench_0080",
+    "order_id": "order_rzp_213609",
+    "payment_id": "pay_2060605",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 5898.37,
+    "currency": "INR",
+    "payment_method": "card_debit",
+    "error_code": "ACCOUNT_BALANCE_LOW",
+    "error_description": "Payer account has insufficient balance to complete debit",
+    "timestamp": "2026-08-22T18:07:05.221674",
+    "retry_count": 0,
+    "customer": {
+      "customer_id": "cust_0080",
+      "name": "Neha Kulkarni",
+      "phone": "+919729039064",
+      "email": "neha.69@example.com",
+      "preferred_language": "hi",
+      "segment": "HIGH_LTV",
+      "historical_payment_success_rate": 0.78
+    },
+    "metadata": {
+      "expected_category": "INSUFFICIENT_FUNDS",
+      "last_contact_hours_ago": 48
+    }
+  },
+  {
+    "event_id": "evt_bench_0081",
+    "order_id": "order_rzp_147549",
+    "payment_id": "pay_3276065",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 4276.99,
+    "currency": "INR",
+    "payment_method": "upi",
+    "error_code": "SBI_NETBANKING_503",
+    "error_description": "NPCI switch under high congestion",
+    "timestamp": "2026-08-22T18:07:05.221718",
+    "retry_count": 1,
+    "customer": {
+      "customer_id": "cust_0081",
+      "name": "Vikram Singh",
+      "phone": "+918669221121",
+      "email": "vikram.68@example.com",
+      "preferred_language": "en",
+      "segment": "STANDARD",
+      "historical_payment_success_rate": 0.87
+    },
+    "metadata": {
+      "expected_category": "TRANSIENT_BANK_DOWNTIME",
+      "last_contact_hours_ago": 1
+    }
+  },
+  {
+    "event_id": "evt_bench_0082",
+    "order_id": "order_rzp_878325",
+    "payment_id": "pay_5693260",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 6312.52,
+    "currency": "INR",
+    "payment_method": "card_debit",
+    "error_code": "ACCOUNT_BALANCE_LOW",
+    "error_description": "Payer account has insufficient balance to complete debit",
+    "timestamp": "2026-08-22T18:07:05.221760",
+    "retry_count": 2,
+    "customer": {
+      "customer_id": "cust_0082",
+      "name": "Nikhil Pillai",
+      "phone": "+917140515379",
+      "email": "nikhil.98@example.com",
+      "preferred_language": "en",
+      "segment": "MEDIUM_LTV",
+      "historical_payment_success_rate": 0.75
+    },
+    "metadata": {
+      "expected_category": "INSUFFICIENT_FUNDS",
+      "last_contact_hours_ago": 48
+    }
+  },
+  {
+    "event_id": "evt_bench_0083",
+    "order_id": "order_rzp_204180",
+    "payment_id": "pay_3049499",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 8347.4,
+    "currency": "INR",
+    "payment_method": "upi",
+    "error_code": "ACCOUNT_BALANCE_LOW",
+    "error_description": "Bank declined authorization due to daily UPI debit limit",
+    "timestamp": "2026-08-22T18:07:05.221803",
+    "retry_count": 0,
+    "customer": {
+      "customer_id": "cust_0083",
+      "name": "Neha Kulkarni",
+      "phone": "+918952996248",
+      "email": "neha.21@example.com",
+      "preferred_language": "hi",
+      "segment": "STANDARD",
+      "historical_payment_success_rate": 0.75
+    },
+    "metadata": {
+      "expected_category": "INSUFFICIENT_FUNDS",
+      "last_contact_hours_ago": 1
+    }
+  },
+  {
+    "event_id": "evt_bench_0084",
+    "order_id": "order_rzp_925013",
+    "payment_id": "pay_4475523",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 1734.06,
+    "currency": "INR",
+    "payment_method": "upi",
+    "error_code": "NPCI_SWITCH_BUSY",
+    "error_description": "Bank server returned HTTP 503 Service Unavailable",
+    "timestamp": "2026-08-22T18:07:05.221847",
+    "retry_count": 1,
+    "customer": {
+      "customer_id": "cust_0084",
+      "name": "Priya Patel",
+      "phone": "+919518496186",
+      "email": "priya.37@example.com",
+      "preferred_language": "hinglish",
+      "segment": "STANDARD",
+      "historical_payment_success_rate": 0.78
+    },
+    "metadata": {
+      "expected_category": "TRANSIENT_BANK_DOWNTIME",
+      "last_contact_hours_ago": 12
+    }
+  },
+  {
+    "event_id": "evt_bench_0085",
+    "order_id": "order_rzp_390743",
+    "payment_id": "pay_1432519",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 16064.44,
+    "currency": "INR",
+    "payment_method": "card_credit",
+    "error_code": "CART_DROP_OFF_HIGH_INTENT",
+    "error_description": "User exited Razorpay Standard Checkout after selecting payment method",
+    "timestamp": "2026-08-22T18:07:05.221886",
+    "retry_count": 0,
+    "customer": {
+      "customer_id": "cust_0085",
+      "name": "Aarav Sharma",
+      "phone": "+917566090561",
+      "email": "aarav.11@example.com",
+      "preferred_language": "en",
+      "segment": "MEDIUM_LTV",
+      "historical_payment_success_rate": 0.9
+    },
+    "metadata": {
+      "expected_category": "CHECKOUT_ABANDONMENT",
+      "last_contact_hours_ago": 12
+    }
+  },
+  {
+    "event_id": "evt_bench_0086",
+    "order_id": "order_rzp_116547",
+    "payment_id": "pay_8990081",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 4296.21,
+    "currency": "INR",
+    "payment_method": "card_credit",
+    "error_code": "CART_DROP_OFF_HIGH_INTENT",
+    "error_description": "User exited Razorpay Standard Checkout after selecting payment method",
+    "timestamp": "2026-08-22T18:07:05.221931",
+    "retry_count": 0,
+    "customer": {
+      "customer_id": "cust_0086",
+      "name": "Kunal Gupta",
+      "phone": "+918925327382",
+      "email": "kunal.56@example.com",
+      "preferred_language": "hi",
+      "segment": "STANDARD",
+      "historical_payment_success_rate": 0.85
+    },
+    "metadata": {
+      "expected_category": "CHECKOUT_ABANDONMENT",
+      "last_contact_hours_ago": 48
+    }
+  },
+  {
+    "event_id": "evt_bench_0087",
+    "order_id": "order_rzp_744986",
+    "payment_id": "pay_9035982",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 1476.06,
+    "currency": "INR",
+    "payment_method": "card_debit",
+    "error_code": "BAD_REQUEST_PAYMENT_TIMED_OUT",
+    "error_description": "3DS verification window timed out before customer entered password",
+    "timestamp": "2026-08-22T18:07:05.221975",
+    "retry_count": 0,
+    "customer": {
+      "customer_id": "cust_0087",
+      "name": "Pooja Nair",
+      "phone": "+918724932977",
+      "email": "pooja.64@example.com",
+      "preferred_language": "hi",
+      "segment": "MEDIUM_LTV",
+      "historical_payment_success_rate": 0.73
+    },
+    "metadata": {
+      "expected_category": "AUTH_OR_OTP_TIMEOUT",
+      "last_contact_hours_ago": 48
+    }
+  },
+  {
+    "event_id": "evt_bench_0088",
+    "order_id": "order_rzp_437758",
+    "payment_id": "pay_6455706",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 2874.43,
+    "currency": "INR",
+    "payment_method": "netbanking",
+    "error_code": "GATEWAY_TIMEOUT_HDFC",
+    "error_description": "Issuing bank gateway failed to acknowledge payment packet within 15s",
+    "timestamp": "2026-08-22T18:07:05.222017",
+    "retry_count": 0,
+    "customer": {
+      "customer_id": "cust_0088",
+      "name": "Rohan Mehta",
+      "phone": "+918635971911",
+      "email": "rohan.86@example.com",
+      "preferred_language": "hi",
+      "segment": "MEDIUM_LTV",
+      "historical_payment_success_rate": 0.77
+    },
+    "metadata": {
+      "expected_category": "TRANSIENT_BANK_DOWNTIME",
+      "last_contact_hours_ago": 1
+    }
+  },
+  {
+    "event_id": "evt_bench_0089",
+    "order_id": "order_rzp_203996",
+    "payment_id": "pay_6686328",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 14941.05,
+    "currency": "INR",
+    "payment_method": "card_credit",
+    "error_code": "CART_DROP_OFF_HIGH_INTENT",
+    "error_description": "User exited Razorpay Standard Checkout after selecting payment method",
+    "timestamp": "2026-08-22T18:07:05.222058",
+    "retry_count": 0,
+    "customer": {
+      "customer_id": "cust_0089",
+      "name": "Kavya Bhat",
+      "phone": "+918947762953",
+      "email": "kavya.61@example.com",
+      "preferred_language": "en",
+      "segment": "STANDARD",
+      "historical_payment_success_rate": 0.88
+    },
+    "metadata": {
+      "expected_category": "CHECKOUT_ABANDONMENT",
+      "last_contact_hours_ago": 24
+    }
+  },
+  {
+    "event_id": "evt_bench_0090",
+    "order_id": "order_rzp_797416",
+    "payment_id": "pay_8245685",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 2538.37,
+    "currency": "INR",
+    "payment_method": "upi",
+    "error_code": "INSUFFICIENT_FUNDS_SBI",
+    "error_description": "Bank declined authorization due to daily UPI debit limit",
+    "timestamp": "2026-08-22T18:07:05.222104",
+    "retry_count": 0,
+    "customer": {
+      "customer_id": "cust_0090",
+      "name": "Kunal Gupta",
+      "phone": "+917414741061",
+      "email": "kunal.57@example.com",
+      "preferred_language": "hinglish",
+      "segment": "STANDARD",
+      "historical_payment_success_rate": 0.84
+    },
+    "metadata": {
+      "expected_category": "INSUFFICIENT_FUNDS",
+      "last_contact_hours_ago": 1
+    }
+  },
+  {
+    "event_id": "evt_bench_0091",
+    "order_id": "order_rzp_445658",
+    "payment_id": "pay_5825620",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 12823.9,
+    "currency": "INR",
+    "payment_method": "card_credit",
+    "error_code": "EXIT_CHECKOUT_STEP_2",
+    "error_description": "User closed browser tab during order review step",
+    "timestamp": "2026-08-22T18:07:05.222145",
+    "retry_count": 0,
+    "customer": {
+      "customer_id": "cust_0091",
+      "name": "Ritu Agrawal",
+      "phone": "+919578741716",
+      "email": "ritu.49@example.com",
+      "preferred_language": "en",
+      "segment": "HIGH_LTV",
+      "historical_payment_success_rate": 0.73
+    },
+    "metadata": {
+      "expected_category": "CHECKOUT_ABANDONMENT",
+      "last_contact_hours_ago": 1
+    }
+  },
+  {
+    "event_id": "evt_bench_0092",
+    "order_id": "order_rzp_788637",
+    "payment_id": "pay_4794319",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 2351.09,
+    "currency": "INR",
+    "payment_method": "card_debit",
+    "error_code": "GATEWAY_TIMEOUT_HDFC",
+    "error_description": "NPCI switch under high congestion",
+    "timestamp": "2026-08-22T18:07:05.222193",
+    "retry_count": 1,
+    "customer": {
+      "customer_id": "cust_0092",
+      "name": "Vikram Singh",
+      "phone": "+918843023757",
+      "email": "vikram.81@example.com",
+      "preferred_language": "hi",
+      "segment": "STANDARD",
+      "historical_payment_success_rate": 0.85
+    },
+    "metadata": {
+      "expected_category": "TRANSIENT_BANK_DOWNTIME",
+      "last_contact_hours_ago": 1
+    }
+  },
+  {
+    "event_id": "evt_bench_0093",
+    "order_id": "order_rzp_789786",
+    "payment_id": "pay_6701311",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 3792.26,
+    "currency": "INR",
+    "payment_method": "upi",
+    "error_code": "SBI_NETBANKING_503",
+    "error_description": "Issuing bank gateway failed to acknowledge payment packet within 15s",
+    "timestamp": "2026-08-22T18:07:05.222233",
+    "retry_count": 1,
+    "customer": {
+      "customer_id": "cust_0093",
+      "name": "Simran Kaur",
+      "phone": "+918507634128",
+      "email": "simran.10@example.com",
+      "preferred_language": "hinglish",
+      "segment": "STANDARD",
+      "historical_payment_success_rate": 0.92
+    },
+    "metadata": {
+      "expected_category": "TRANSIENT_BANK_DOWNTIME",
+      "last_contact_hours_ago": 1
+    }
+  },
+  {
+    "event_id": "evt_bench_0094",
+    "order_id": "order_rzp_172965",
+    "payment_id": "pay_8043620",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 3739.39,
+    "currency": "INR",
+    "payment_method": "upi",
+    "error_code": "ABANDONED_CHECKOUT",
+    "error_description": "User exited Razorpay Standard Checkout after selecting payment method",
+    "timestamp": "2026-08-22T18:07:05.222278",
+    "retry_count": 0,
+    "customer": {
+      "customer_id": "cust_0094",
+      "name": "Siddharth Rao",
+      "phone": "+918948393831",
+      "email": "siddharth.53@example.com",
+      "preferred_language": "hinglish",
+      "segment": "MEDIUM_LTV",
+      "historical_payment_success_rate": 0.79
+    },
+    "metadata": {
+      "expected_category": "CHECKOUT_ABANDONMENT",
+      "last_contact_hours_ago": 24
+    }
+  },
+  {
+    "event_id": "evt_bench_0095",
+    "order_id": "order_rzp_725185",
+    "payment_id": "pay_2368710",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 10097.42,
+    "currency": "INR",
+    "payment_method": "card_credit",
+    "error_code": "FRAUD_HOTLISTED_CARD",
+    "error_description": "Card identified on national hotlist or high-velocity risk trigger",
+    "timestamp": "2026-08-22T18:07:05.222318",
+    "retry_count": 0,
+    "customer": {
+      "customer_id": "cust_0095",
+      "name": "Nikhil Pillai",
+      "phone": "+918168672809",
+      "email": "nikhil.66@example.com",
+      "preferred_language": "hi",
+      "segment": "MEDIUM_LTV",
+      "historical_payment_success_rate": 0.81
+    },
+    "metadata": {
+      "expected_category": "FRAUD_OR_CARD_BLOCKED",
+      "last_contact_hours_ago": 1
+    }
+  },
+  {
+    "event_id": "evt_bench_0096",
+    "order_id": "order_rzp_386436",
+    "payment_id": "pay_9164342",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 3370.47,
+    "currency": "INR",
+    "payment_method": "card_debit",
+    "error_code": "BAD_REQUEST_PAYMENT_TIMED_OUT",
+    "error_description": "Customer did not enter 2FA SMS OTP within 180 seconds",
+    "timestamp": "2026-08-22T18:07:05.222359",
+    "retry_count": 0,
+    "customer": {
+      "customer_id": "cust_0096",
+      "name": "Kavya Bhat",
+      "phone": "+919263164755",
+      "email": "kavya.95@example.com",
+      "preferred_language": "en",
+      "segment": "STANDARD",
+      "historical_payment_success_rate": 0.71
+    },
+    "metadata": {
+      "expected_category": "AUTH_OR_OTP_TIMEOUT",
+      "last_contact_hours_ago": 48
+    }
+  },
+  {
+    "event_id": "evt_bench_0097",
+    "order_id": "order_rzp_108060",
+    "payment_id": "pay_9344741",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 4815.28,
+    "currency": "INR",
+    "payment_method": "card_credit",
+    "error_code": "CART_DROP_OFF_HIGH_INTENT",
+    "error_description": "User exited Razorpay Standard Checkout after selecting payment method",
+    "timestamp": "2026-08-22T18:07:05.222402",
+    "retry_count": 0,
+    "customer": {
+      "customer_id": "cust_0097",
+      "name": "Priya Patel",
+      "phone": "+918849649210",
+      "email": "priya.32@example.com",
+      "preferred_language": "hinglish",
+      "segment": "STANDARD",
+      "historical_payment_success_rate": 0.8
+    },
+    "metadata": {
+      "expected_category": "CHECKOUT_ABANDONMENT",
+      "last_contact_hours_ago": 12
+    }
+  },
+  {
+    "event_id": "evt_bench_0098",
+    "order_id": "order_rzp_973835",
+    "payment_id": "pay_1314430",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 8348.2,
+    "currency": "INR",
+    "payment_method": "card_debit",
+    "error_code": "AUTH_SESSION_TIMEOUT",
+    "error_description": "Customer did not enter 2FA SMS OTP within 180 seconds",
+    "timestamp": "2026-08-22T18:07:05.222445",
+    "retry_count": 0,
+    "customer": {
+      "customer_id": "cust_0098",
+      "name": "Ritu Agrawal",
+      "phone": "+918974629461",
+      "email": "ritu.19@example.com",
+      "preferred_language": "en",
+      "segment": "HIGH_LTV",
+      "historical_payment_success_rate": 0.84
+    },
+    "metadata": {
+      "expected_category": "AUTH_OR_OTP_TIMEOUT",
+      "last_contact_hours_ago": 1
+    }
+  },
+  {
+    "event_id": "evt_bench_0099",
+    "order_id": "order_rzp_403578",
+    "payment_id": "pay_7070880",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 1420.5,
+    "currency": "INR",
+    "payment_method": "upi",
+    "error_code": "INSUFFICIENT_FUNDS_SBI",
+    "error_description": "Bank declined authorization due to daily UPI debit limit",
+    "timestamp": "2026-08-22T18:07:05.222486",
+    "retry_count": 0,
+    "customer": {
+      "customer_id": "cust_0099",
+      "name": "Kavya Bhat",
+      "phone": "+917378514962",
+      "email": "kavya.65@example.com",
+      "preferred_language": "hinglish",
+      "segment": "MEDIUM_LTV",
+      "historical_payment_success_rate": 0.76
+    },
+    "metadata": {
+      "expected_category": "INSUFFICIENT_FUNDS",
+      "last_contact_hours_ago": 1
+    }
+  },
+  {
+    "event_id": "evt_bench_0100",
+    "order_id": "order_rzp_182467",
+    "payment_id": "pay_9564488",
+    "merchant_id": "rzp_merch_acme",
+    "merchant_name": "Acme Fashion & Tech India",
+    "amount": 3665.53,
+    "currency": "INR",
+    "payment_method": "upi",
+    "error_code": "ACCOUNT_BALANCE_LOW",
+    "error_description": "Bank declined authorization due to daily UPI debit limit",
+    "timestamp": "2026-08-22T18:07:05.222527",
+    "retry_count": 0,
+    "customer": {
+      "customer_id": "cust_0100",
+      "name": "Manish Bansal",
+      "phone": "+919719679239",
+      "email": "manish.24@example.com",
+      "preferred_language": "hi",
+      "segment": "STANDARD",
+      "historical_payment_success_rate": 0.83
+    },
+    "metadata": {
+      "expected_category": "INSUFFICIENT_FUNDS",
+      "last_contact_hours_ago": 24
+    }
+  }
+]
