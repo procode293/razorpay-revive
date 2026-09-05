@@ -30,8 +30,8 @@
         .custom-scrollbar::-webkit-scrollbar { width: 6px; height: 6px; }
         .custom-scrollbar::-webkit-scrollbar-track { background: #0d172e; }
         .custom-scrollbar::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 3px; }
-        .phone-frame { width: 280px; min-height: 420px; border-radius: 28px; border: 3px solid #334155; background: #0f172a; position: relative; overflow: hidden; }
-        .phone-notch { width: 100px; height: 20px; background: #1e293b; border-radius: 0 0 12px 12px; margin: 0 auto; }
+        .phone-frame { width: 300px; min-height: 450px; border-radius: 32px; border: 4px solid #334155; background: #091224; position: relative; overflow: hidden; }
+        .phone-notch { width: 85px; height: 16px; background: #1e293b; border-radius: 0 0 10px 10px; margin: 0 auto; }
         .chat-bubble-green { background: #054d2e; border-radius: 0 12px 12px 12px; }
         .chat-bubble-white { background: #1e293b; border-radius: 12px 0 12px 12px; }
         .typing-dot { animation: blink 1.4s infinite both; }
@@ -120,7 +120,7 @@
         <!-- === ROW 3: Main 3-column Grid === -->
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
 
-            <!-- LEFT: Simulator + Phone Preview + DAG Trace -->
+            <!-- LEFT: Simulator + Fully Interactive Phone Simulator -->
             <div class="lg:col-span-4 space-y-6">
 
                 <!-- Sandbox Form -->
@@ -155,30 +155,113 @@
                     </div>
                 </div>
 
-                <!-- Phone Simulator -->
+                <!-- Fully Interactive Customer Phone Simulator -->
                 <div class="bg-[#0f1b35] border border-slate-800 rounded-xl p-5 glow-border">
-                    <div class="flex items-center space-x-2 pb-3 border-b border-slate-800">
-                        <i data-lucide="smartphone" class="w-5 h-5 text-green-400"></i>
-                        <h2 class="font-semibold text-white">Customer Phone Preview</h2>
+                    <div class="flex items-center justify-between pb-3 border-b border-slate-800">
+                        <div class="flex items-center space-x-2">
+                            <i data-lucide="smartphone" class="w-5 h-5 text-green-400"></i>
+                            <h2 class="font-semibold text-white">Live Customer Phone</h2>
+                        </div>
+                        <!-- Mode Switcher Tabs -->
+                        <div class="flex items-center space-x-1 bg-[#091224] p-0.5 rounded-lg border border-slate-800 text-[10px]">
+                            <button id="phone-tab-whatsapp" onclick="switchPhoneMode('whatsapp')" class="px-2 py-1 rounded bg-[#075e54] text-white font-medium transition">WhatsApp</button>
+                            <button id="phone-tab-voice" onclick="switchPhoneMode('voice')" class="px-2 py-1 rounded text-slate-400 hover:text-white transition">Voice Call</button>
+                        </div>
                     </div>
+                    
                     <div class="mt-4 flex justify-center">
-                        <div class="phone-frame p-0">
-                            <div class="phone-notch"></div>
-                            <!-- WhatsApp Header -->
-                            <div class="bg-[#075e54] px-3 py-2 flex items-center space-x-2">
-                                <div class="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center text-white text-xs font-bold">R</div>
-                                <div><div class="text-white text-xs font-semibold">Razorpay Revive</div><div class="text-green-200 text-[9px]">AI Recovery Agent</div></div>
-                            </div>
-                            <!-- Chat Area -->
-                            <div class="p-3 space-y-2 overflow-y-auto custom-scrollbar" style="height: 310px; background: url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"200\" height=\"200\"><rect fill=\"%23091224\" width=\"200\" height=\"200\"/></svg>')" id="phone-chat-area">
-                                <div class="text-center text-slate-500 text-[10px] py-8">
-                                    Run a simulation to see the<br>customer outreach preview here
+                        <div class="phone-frame p-0 shadow-2xl">
+                            <!-- Status Bar -->
+                            <div class="bg-[#0f172a] px-3 py-1 flex items-center justify-between text-[9px] text-slate-400 border-b border-slate-800/50">
+                                <span id="phone-clock">09:41 AM</span>
+                                <div class="phone-notch"></div>
+                                <div class="flex items-center space-x-1">
+                                    <i data-lucide="wifi" class="w-2.5 h-2.5"></i>
+                                    <i data-lucide="battery" class="w-2.5 h-2.5 text-emerald-400"></i>
                                 </div>
                             </div>
-                            <!-- Input Bar -->
-                            <div class="bg-[#1a1a2e] px-3 py-2 flex items-center space-x-2 border-t border-slate-800">
-                                <div class="flex-1 bg-[#091224] rounded-full px-3 py-1.5 text-[10px] text-slate-500">Type a message...</div>
-                                <div class="w-7 h-7 rounded-full bg-[#075e54] flex items-center justify-center"><i data-lucide="send" class="w-3 h-3 text-white"></i></div>
+
+                            <!-- WhatsApp Screen Container -->
+                            <div id="phone-whatsapp-screen" class="flex flex-col" style="height: 385px;">
+                                <!-- WhatsApp Header -->
+                                <div class="bg-[#075e54] px-3 py-2 flex items-center justify-between shadow">
+                                    <div class="flex items-center space-x-2">
+                                        <div class="w-7 h-7 rounded-full bg-emerald-700 border border-emerald-400/40 flex items-center justify-center text-white text-xs font-bold">
+                                            <i data-lucide="shield-check" class="w-3.5 h-3.5 text-emerald-200"></i>
+                                        </div>
+                                        <div>
+                                            <div class="text-white text-xs font-semibold flex items-center space-x-1">
+                                                <span>Razorpay Revive</span>
+                                                <i data-lucide="check-circle" class="w-3 h-3 text-cyan-300"></i>
+                                            </div>
+                                            <div class="text-green-200 text-[9px]">Verified Business • Online</div>
+                                        </div>
+                                    </div>
+                                    <button onclick="switchPhoneMode('voice')" title="Switch to Voice Call" class="w-6 h-6 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition">
+                                        <i data-lucide="phone" class="w-3 h-3"></i>
+                                    </button>
+                                </div>
+
+                                <!-- WhatsApp Chat Messages Area -->
+                                <div class="p-3 flex-1 space-y-2 overflow-y-auto custom-scrollbar" style="background-color: #091224;" id="phone-chat-area">
+                                    <!-- Dynamic chat bubbles rendered here -->
+                                </div>
+
+                                <!-- Real Interactive Working Input Bar -->
+                                <form onsubmit="handleCustomerSendMessage(event)" class="bg-[#1a1a2e] px-2.5 py-2 flex items-center space-x-2 border-t border-slate-800">
+                                    <input type="text" id="phone-message-input" placeholder="Type a reply (e.g. 'Pay now')..." class="flex-1 bg-[#091224] border border-slate-700 rounded-full px-3 py-1.5 text-[10px] text-white focus:outline-none focus:border-emerald-500 placeholder-slate-500">
+                                    <button type="submit" class="w-7 h-7 rounded-full bg-[#075e54] hover:bg-[#0a7c6f] flex items-center justify-center text-white transition shadow">
+                                        <i data-lucide="send" class="w-3 h-3"></i>
+                                    </button>
+                                </form>
+                            </div>
+
+                            <!-- Voice Bot Screen Container -->
+                            <div id="phone-voice-screen" class="hidden flex-col justify-between p-4 bg-[#0a1120]" style="height: 385px;">
+                                <div class="text-center space-y-1">
+                                    <div class="text-[9px] text-emerald-400 font-semibold tracking-wider uppercase">Razorpay AI Dunning Assistant</div>
+                                    <div class="text-xs font-bold text-white" id="voice-caller-name">Aarav Sharma</div>
+                                    <div class="text-[9px] text-slate-400" id="voice-call-timer">00:14 • HD Voice Connected</div>
+                                </div>
+
+                                <!-- Pulsing Voice Rings & Waves -->
+                                <div class="text-center py-2 relative">
+                                    <div class="relative mx-auto w-20 h-20 flex items-center justify-center">
+                                        <div class="absolute inset-0 rounded-full bg-emerald-500/20 voice-ring"></div>
+                                        <div class="absolute inset-2 rounded-full bg-emerald-500/30 voice-ring" style="animation-delay: 0.3s"></div>
+                                        <div class="w-16 h-16 rounded-full bg-emerald-600 shadow-lg shadow-emerald-500/30 flex items-center justify-center relative z-10">
+                                            <i data-lucide="bot" class="w-8 h-8 text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center justify-center space-x-1 mt-3 h-5" id="audio-waveform">
+                                        <span class="w-1 bg-emerald-400 rounded-full animate-bounce h-2"></span>
+                                        <span class="w-1 bg-emerald-400 rounded-full animate-bounce h-5" style="animation-delay: 0.1s"></span>
+                                        <span class="w-1 bg-emerald-400 rounded-full animate-bounce h-3" style="animation-delay: 0.2s"></span>
+                                        <span class="w-1 bg-emerald-400 rounded-full animate-bounce h-4" style="animation-delay: 0.3s"></span>
+                                        <span class="w-1 bg-emerald-400 rounded-full animate-bounce h-2" style="animation-delay: 0.4s"></span>
+                                    </div>
+                                </div>
+
+                                <!-- Voice Script Box & Live Audio Button -->
+                                <div class="bg-[#091224] border border-slate-800 rounded-lg p-2.5 text-[10px] text-slate-300 italic text-left leading-relaxed">
+                                    <span id="voice-script-text">"Namaste Aarav ji! Acme Corp accounts se AI call hai. Aapka invoice #INV-4902 of ₹54,000 overdue hai..."</span>
+                                    <button type="button" onclick="playVoiceAudio()" class="mt-2 w-full py-1 px-2 rounded bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 text-[9px] font-semibold flex items-center justify-center space-x-1 transition">
+                                        <i data-lucide="volume-2" class="w-3 h-3"></i>
+                                        <span id="voice-audio-btn-label">🔊 Listen to AI Agent Voice</span>
+                                    </button>
+                                </div>
+
+                                <!-- Interactive Call Controls -->
+                                <div class="grid grid-cols-2 gap-2 pt-1">
+                                    <button onclick="recordPromiseToPay()" class="py-1.5 px-2 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-[10px] font-medium transition flex items-center justify-center space-x-1">
+                                        <i data-lucide="calendar" class="w-3 h-3"></i>
+                                        <span>Promise to Pay</span>
+                                    </button>
+                                    <button onclick="hangUpVoiceCall()" class="py-1.5 px-2 rounded-lg bg-red-600 hover:bg-red-500 text-white text-[10px] font-medium transition flex items-center justify-center space-x-1">
+                                        <i data-lucide="phone-off" class="w-3 h-3"></i>
+                                        <span>End Call</span>
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -233,7 +316,7 @@
                             <input type="range" id="slider-cooldown" min="1" max="24" value="4" class="w-full" oninput="document.getElementById('slider-cooldown-val').textContent=this.value">
                         </div>
                         <div>
-                            <div class="flex justify-between text-slate-300 mb-1"><span>B2B Voice Threshold (₹)</span><span class="font-mono text-blue-400" id="slider-b2b-val">50000</span></div>
+                            <div class="flex justify-between text-slate-300 mb-1"><span>B2B Voice Threshold (₹)</span><span class="font-mono text-blue-400" id="slider-b2b-val">50,000</span></div>
                             <input type="range" id="slider-b2b" min="5000" max="200000" step="5000" value="50000" class="w-full" oninput="document.getElementById('slider-b2b-val').textContent=Number(this.value).toLocaleString('en-IN')">
                         </div>
                         <div class="flex items-center justify-between">
